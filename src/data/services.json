@@ -1,0 +1,32 @@
+[
+  {
+    "icon": "fe:rocket",
+    "name": "Niveles A1-C2",
+    "content": "Lorem ipsum dolor sit amet consectetur. Ultrices leo semper sapien massa suscipit pulvinar gravida lacus. Congue etiam sed vitae risus semper neque iaculis."
+  },
+  {
+    "icon": "fe:calendar",
+    "name": "Todas las edades",
+    "content": "Lorem ipsum dolor sit amet consectetur. Ultrices leo semper sapien massa suscipit pulvinar gravida lacus."
+  },
+  {
+    "icon": "material-symbols:nest-remote-comfort-sensor-outline-rounded",
+    "name": "Online",
+    "content": "Lorem ipsum dolor sit amet consectetur. Ultrices leo semper sapien massa suscipit pulvinar gravida lacus."
+  },
+  {
+    "icon": "material-symbols:frame-person-mic-rounded",
+    "name": "Clases Individuales",
+    "content": "Lorem ipsum dolor sit amet consectetur. Ultrices leo semper sapien massa suscipit pulvinar gravida lacus."
+  },
+  {
+    "icon": "material-symbols:inbox-customize-rounded",
+    "name": "Material Personalizado",
+    "content": "Lorem ipsum dolor sit amet consectetur. Ultrices leo semper sapien massa suscipit pulvinar gravida lacus."
+  },
+  {
+    "icon": "fe:clock",
+    "name": "Horario Felxible",
+    "content": "Lorem ipsum dolor sit amet consectetur. Ultrices leo semper sapien massa suscipit pulvinar gravida lacus."
+  }
+]

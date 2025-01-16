@@ -1,0 +1,52 @@
+---
+import { Icon } from "astro-icon/components";
+import data from "../data/reviews.json";
+---
+
+<section class="reviews-wrapper flex justify-center px-4 pt-10">
+  <h2 class="sr-only">Reviews</h2>
+  <div class="review-container bg-gray-400">
+    <button
+      class="review-btn grid-sm review-btn--prev absolute bottom-0 left-0 top-0 z-10 bg-white"
+      id="prev"
+      aria-label="Previous Review"
+    >
+      <Icon name="fe:arrow-left" size="30" />
+    </button>
+
+    <div class="overflow-hidden">
+      <div
+        class="reviews my-4 flex -translate-x-full transition-transform duration-300"
+      >
+        {
+          // duplicate the first and last items
+          [data[data.length - 1], ...data, data[0]].map((review, index) => (
+            <div class="review flex flex-[1_0_100%] flex-col items-center">
+              <img
+                src={review.avatar}
+                alt={review.name}
+                class="review-avatar max-w-20 rounded-full"
+              />
+              <p class="review-content w-full max-w-md px-3 text-center">
+                {review.content}
+              </p>
+              <p class="review-name text-3 text-center font-semibold">
+                {review.name}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <button
+      class="review-btn grid-sm review-btn--next absolute bottom-0 right-0 top-0 z-10 bg-white"
+      id="next"
+      aria-label="Next Review"
+    >
+      <Icon name="fe:arrow-right" size="30" />
+    </button>
+  </div>
+</section>
+
+<script is:inline src={"/src/js/reviews.js"}></script>

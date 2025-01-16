@@ -1,0 +1,84 @@
+---
+// import Footer from "../components/Footer.astro";
+import Navigation from "../components/Navigation.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro Basics</title>
+  </head>
+  <body class="mx-auto grid h-screen min-h-full max-w-screen-lg bg-yellow-400">
+    <div class="layout-wrapper grid-rows-[auto_1fr_auto]">
+      <Navigation />
+      <main class="mx-[5%] flex-grow overflow-auto p-4 sm:mx-[2%]">
+        <!-- <slot /> -->
+      </main>
+      <footer
+        class="relative bottom-0 grid place-items-center bg-yellow-400 before:absolute before:inset-x-0 before:bottom-[-80px] before:z-[-1] before:block before:h-10 before:rotate-[-20deg] before:rounded-full before:bg-black before:blur-[80px] before:content-[''] after:absolute after:inset-x-0 after:bottom-[-80px] after:z-[-1] after:block after:h-10 after:rotate-[20deg] after:rounded-full after:bg-red-700 after:blur-[80px] after:content-['']"
+      >
+        <small>Copyright © <span id="copyrightYear"></span> iLang</small>
+      </footer>
+    </div>
+    <script>
+      document.querySelector("#copyrightYear")!.textContent = new Date()
+        .getFullYear()
+        .toString();
+    </script>
+  </body>
+</html>
+
+<!-- <style>
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style> -->
+<!--
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro Basics</title>
+  </head>
+  <body class="mx-auto max-w-screen-lg bg-yellow-400">
+    <div
+      class="layout-wrapper grid min-h-screen grid-rows-[auto_1fr_auto] overflow-hidden"
+    >
+      <Navigation />
+      <main class="mx-[5%] sm:mx-[2%]">
+        <slot />
+      </main>
+      <footer
+        class="relative bg-yellow-400 grid place-items-center before:absolute before:inset-x-0 before:bottom-[-80px] before:z-[-1] before:block before:h-10 before:rotate-[-20deg] before:rounded-full before:bg-black before:blur-[80px] before:content-[''] after:absolute after:inset-x-0 after:bottom-[-80px] after:z-[-1] after:block after:h-10 after:rotate-[20deg] after:rounded-full after:bg-red-700 after:blur-[80px] after:content-['']"
+      >
+        <small class=""
+          >Copyright © <span id="copyrightYear"></span> iLang</small
+        >
+      </footer>
+    </div>
+    <script>
+      document.querySelector("#copyrightYear")!.textContent = new Date()
+        .getFullYear()
+        .toString();
+    </script>
+  </body>
+</html>
+
+<style>
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style> -->

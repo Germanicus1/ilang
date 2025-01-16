@@ -1,0 +1,65 @@
+---
+import { Icon } from 'astro-icon/components';
+import data from '../data/pricing.json';
+import Button from './Button.astro';
+---
+
+<section class="pricing-wrapper grid place-items-center justify-center gap-2 py-10">
+	<div class="grid-sm mb-10 text-center sm:mb-20">
+		<h2
+			id="pricing"
+			class="font-black leading-tight tracking-tight text-txt-header ~/lg:~text-3xl/6xl"
+		>
+			Un Precio para Todos
+		</h2>
+		<p class="mt-3 ~/lg:~text-sm/3xl">
+			Ya sea que tengas prisa y quieras aprender intensivamente o prefieras estudiar a tu
+			propio ritmo. Tengo una oferta para cada necesidad.
+		</p>
+	</div>
+
+	<div
+		class="pricing-container container-sm grid grid-cols-1 gap-2 sm:grid-cols-3 lg:mx-10"
+	>
+		{
+			data.map((card, index) => (
+				<div
+					class={`pricing-card relative w-full border bg-yellow-400 p-3 text-center ${
+						card?.featured
+							? "z-10 border-4 border-purple-600 font-semibold text-txt-header before:absolute before:left-1/2 before:top-[-1.3rem] before:-translate-x-1/2 before:whitespace-nowrap before:rounded-full before:bg-purple-600 before:px-4 before:py-2 before:text-center before:text-sm before:uppercase before:text-white before:content-['Más_Popular'] sm:col-start-2 sm:row-start-1 sm:scale-110"
+							: 'border-black'
+					}`}
+				>
+					<h3 class="pricing-card-pill my-2 font-bold tracking-tight ~text-xl/2xl">
+						{card.title}
+					</h3>
+					<p class="pricing-card-description mb-3 ~text-xs/base">{card.description}</p>
+
+					<p class="pricing-card-price text-txt mb-3 font-black ~text-3xl/5xl">
+						{card.price}
+					</p>
+
+					<ul class="pricing-card-feature-container mb-2 grid gap-2">
+						{card.details.map((feature) => (
+							<li class="pricing-card-feature flex items-start gap-2">
+								<Icon
+									name="fe:check-circle-o"
+									size="1.5rem"
+									class={`${card?.featured ? 'text-purple-600' : 'text-muted'} shrink-0`}
+								/>
+								<span class="flex-1 text-left">{feature}</span>
+							</li>
+						))}
+					</ul>
+
+					<Button
+						isHoverEffectEnabled={card.button.isHoverEffectEnabled}
+						text={card.button.text}
+						style={card.button.style}
+						link={card.button.url}
+					/>
+				</div>
+			))
+		}
+	</div>
+</section>

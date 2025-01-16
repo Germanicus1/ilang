@@ -1,0 +1,68 @@
+---
+import { Icon } from 'astro-icon/components';
+import data from '../data/reviews.json';
+---
+
+<section
+	class="reviews-wrapper my-10 flex items-center justify-center bg-yellow-400 text-center"
+>
+	<h2 class="sr-only">Reviews</h2>
+	<div
+		class="review-container bg-trans relative flex max-w-sm items-stretch justify-between overflow-hidden sm:max-w-lg"
+	>
+		<!-- Left Button -->
+		<div>
+			<button
+				class="review-btn review-btn--prev absolute bottom-0 left-0 top-0 z-10 flex w-10 items-center justify-center"
+				id="prev"
+				aria-label="Previous Review"
+			>
+				<Icon name="fe:arrow-left" size="30" />
+			</button>
+		</div>
+
+		<!-- Reviews -->
+		<div class="border-1 flex-grow overflow-hidden border-2 border-accent1 pt-4">
+			<div class="reviews flex -translate-x-full">
+				{
+					[data[data.length - 1], ...data, data[0]].map((review, index) => (
+						<div class="review flex flex-[1_0_100%] flex-col items-center">
+							<img
+								src={review.avatar}
+								alt={review.name}
+								class="review-avatar max-w-28 rounded-full"
+							/>
+							<p class="review-content w-[80%] max-w-md px-8 text-center ~/lg:~text-sm/lg">
+								{review.content}
+							</p>
+							<p class="review-name bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text pb-12 pt-2 text-center font-semibold text-transparent ~/lg:~text-base/2xl">
+								{review.name}
+							</p>
+						</div>
+					))
+				}
+			</div>
+		</div>
+
+		<!-- Right Button -->
+		<button
+			class="review-btn review-btn--next absolute bottom-0 right-0 top-0 z-10 flex w-10 items-center justify-center"
+			id="next"
+			aria-label="Next Review"
+		>
+			<Icon name="fe:arrow-right" size="30" />
+		</button>
+		<!-- TODO: MAke the indicators clickable -->
+		<div
+			class="indicator-container absolute bottom-4 left-1/2 flex -translate-x-1/2 justify-center gap-3"
+		>
+			{
+				data.map((review) => (
+					<buttonm class="indicator h-4 w-4 rounded-full border-[0.15em] border-black" />
+				))
+			}
+		</div>
+	</div>
+</section>
+
+<script is:inline src={'/src/js/reviews.js'}></script>

@@ -1,0 +1,69 @@
+---
+// import Footer from "../components/Footer.astro";
+import Navigation from '../components/Navigation.astro';
+// Supports weights 100-900
+// import '@fontsource-variable/montserrat';
+// import '@fontsource/lato';
+// import '@fontsource/twinkle-star';
+import '../global.css';
+---
+
+<!--
+TODO: Make everything (text, images etc) responsive. Ther is something like clamp for tailwind. Have to find it again.
+TODO: Put colours in css variables.
+--><!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>iLang</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+	</head>
+	<body
+		class="mx-auto flex min-h-screen max-w-5xl flex-col justify-center bg-bkg text-txt-body"
+	>
+		<!-- Navigation -->
+		<Navigation />
+		<!-- Main Content -->
+		<main class="mx-[2%] flex-grow overflow-auto">
+			<slot />
+		</main>
+
+		<!-- Footer -->
+		<footer class="relative w-full text-center">
+			<small>Copyright © <span id="copyrightYear"></span> iLang</small>
+		</footer>
+		<!-- <footer
+  class="relative w-full bg-yellow-400 text-center before:-z-10 before:from-red-600 before:to-yellow-400 before:absolute before:inset-x-10 before:bottom-[5rem]  before:h-20 before:rotate-[20deg] before:rounded-full before:bg-gradient-to-r before:blur-[60px] before:content-[''] after:from-green-700 after:to-yellow-400 after:absolute after:inset-x-10 after:bottom-[5rem] after:block after:h-20 after:-rotate-[20deg] after:rounded-full after:bg-gradient-to-l after:blur-[60px] after:content-[''] after:-z-10 max-w-5xl mx-auto"
+>
+  <small>Copyright © <span id="copyrightYear"></span> iLang</small>
+</footer> -->
+	</body>
+	<script>
+		document.querySelector('#copyrightYear')!.textContent = new Date()
+			.getFullYear()
+			.toString();
+	</script>
+	<svg
+		xmlns="//www.w3.org/2000/svg"
+		version="1.1"
+		class="svg-filters"
+		style="display:none;"
+	>
+		<defs>
+			<filter id="marker-shape">
+				<feTurbulence
+					type="fractalNoise"
+					baseFrequency="0.01 0.15"
+					numOctaves="1"
+					result="warp"></feTurbulence>
+				<feDisplacementMap
+					xChannelSelector="R"
+					yChannelSelector="G"
+					scale="60"
+					in="SourceGraphic"
+					in2="warp"></feDisplacementMap>
+			</filter>
+		</defs>
+	</svg>
+</html>

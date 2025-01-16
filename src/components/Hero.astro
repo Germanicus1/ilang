@@ -1,0 +1,49 @@
+---
+import { Image } from 'astro:assets';
+import myHeroImage from '../../src/assets/hero_image_all.png';
+const heroText = 'Deutsch sprechen wie ein Profi.';
+---
+
+<section class="hero-wrapper flex">
+	<!-- Left Side: Text -->
+	<div class="lg:-mr[5%] -mr-[20%] mt-[5%] sm:-mr-[15%] md:-mr-[10%]">
+		<h1 class="font-black tracking-tight text-txt-header ~/lg:~text-4xl/7xl">
+			{heroText}
+		</h1>
+		<!-- TODO: Fix text size to become bigger when on tablet or desktop -->
+		<p class="mt-4 font-medium text-txt-body ~/lg:~text-base/3xl">
+			¡Domina el alemán como un nativo! Si buscas clases particulares personalizadas y
+			flexibles, este formato es para ti. Mejora rápido en áreas clave para tu carrera,
+			empleo o estudios. <span class="font-black">¡Alcanza tus metas ahora!</span>
+		</p>
+		<!-- Contact button. Shown on devices bigger than sm (640px) -->
+		<div class="hidden w-full p-8 sm:flex">
+			<a
+				href="#"
+				class=`rounded-lg w-3/4 cursor-pointer p-2 text-center sm:text-xl font-semibold sm:text-sm bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white shadow-md hover:shadow-none shadow-yellow-800`
+				>Contáctame</a
+			>
+		</div>
+	</div>
+
+	<!-- Right Side: Image -->
+	<div class="-z-10 -mr-[10%] sm:mr-0">
+		<Image
+			src={myHeroImage}
+			alt="Peter Kerschbaumer"
+			loading="lazy"
+			decoding="async"
+			class="~/lg:~max-w-[14rem]/[32rem]"
+		/>
+	</div>
+</section>
+<!-- Contact button for small screens. Spans over the full width of the screen. -->
+<div
+	class="m-auto flex w-full max-w-xs place-items-center px-5 py-5 sm:hidden sm:items-center"
+>
+	<a
+		href="#"
+		class=`rounded-lg w-full cursor-pointer rounded-sm p-2 text-center text-sm bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white shadow-md shadow-yellow-800`
+		>Contáctame</a
+	>
+</div>

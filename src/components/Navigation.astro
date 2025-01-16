@@ -1,0 +1,74 @@
+---
+import { Icon } from 'astro-icon/components';
+
+const navLinks = [
+	{
+		name: 'Home',
+		url: '/',
+		style: 'transparent',
+	},
+	{
+		name: 'Pricing',
+		url: '#pricing',
+		style: 'transparent',
+	},
+	{
+		name: 'About',
+		url: '/about',
+		style: 'transparent',
+	},
+	{
+		name: 'Sign in',
+		url: '/signin',
+		style: 'transparent',
+		// "bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white shadow-md shadow-yellow-800",
+	},
+];
+---
+
+<nav class="z-10 w-full">
+	<div
+		class="nav-container mx-2 flex items-center justify-between border-0 bg-bkg p-2 sm:shadow-none"
+	>
+		<Icon name="global" size="clamp(30px, 6vw, 70px)" class="logo" />
+		<div class="nav-wrapper flex items-center gap-4 bg-inherit">
+			<button
+				class="btn btn--menu peer sm:hidden"
+				id="menu-btn"
+				aria-expanded="false"
+				aria-label="Open mobile nav"
+			>
+				<Icon name="fe:bar" size="30px" />
+			</button>
+			<!-- Menu -->
+			<ul
+				class="nav-links absolute left-0 right-0 top-10 flex -translate-y-[200%] transform flex-col items-center gap-3 bg-inherit p-4 shadow-lg peer-aria-expanded:translate-y-0 sm:static sm:top-0 sm:translate-y-0 sm:flex-row sm:gap-6 sm:bg-transparent sm:p-0 sm:shadow-none"
+				role="navigation"
+			>
+				{
+					navLinks.map((link) => (
+						<li
+							role="none"
+							class={`text-semibold w-full cursor-pointer rounded-sm p-2 text-center text-txt-header ~/lg:~text-lg/xl ${link.style}`}
+						>
+							<a href={link.url} class={`btn nav-link whitespace-nowrap`}>
+								{link.name}
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const navBtn = document.querySelector('#menu-btn');
+
+		navBtn?.addEventListener('click', () => {
+			const expanded = navBtn.getAttribute('aria-expanded') === 'true';
+			navBtn.setAttribute('aria-expanded', (!expanded).toString());
+		});
+	});
+</script>

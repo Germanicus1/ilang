@@ -1,0 +1,24 @@
+---
+import { Icon } from 'astro-icon/components';
+import data from '../data/services.json';
+---
+
+<section
+	class="services-wrapper rexlative mx-auto flex max-w-full flex-wrap items-start ~/lg:~my-4/16 ~/lg:~gap-3/8"
+>
+	<h2 class="sr-only">Services</h2>
+	{
+		data.map((service) => (
+			<div class="service flex-[1_1_150px] sm:flex-[1_1_30%]">
+				<div class="service--icon" />
+				<Icon
+					name={service.icon}
+					class="justify-self-start rounded-full border-8 border-accent1 bg-accent1 ~/lg:~mb-1/2"
+					size="clamp(40px, 7vw, 70px)"
+				/>
+				<h3 class="font-semibold text-txt-header ~/lg:~text-lg/2xl">{service.name}</h3>
+				<p class="text-txt-body ~/lg:~text-xs/xl">{service.content}</p>
+			</div>
+		))
+	}
+</section>

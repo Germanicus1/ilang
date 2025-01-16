@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Jaume Muños",
+    "content": "Perfecto para preparar mi mudanza a Alemania. Clases prácticas, dinámicas y enfocadas en conversación real.",
+    "avatar": "/src/assets/avatar01.jpg"
+  },
+  {
+    "name": "Ana López",
+    "content": "Gracias a estas clases, aprendí alemán rápidamente y me siento preparado para mi nueva vida en Suiza.",
+    "avatar": "/src/assets/avatar02.jpg"
+  },
+  {
+    "name": "Carlos Gilabert",
+    "content": "El profesor adapta las clases según tus necesidades. ¡Ideal para mejorar antes de empezar un nuevo trabajo!",
+    "avatar": "/src/assets/avatar03.jpg"
+  },
+  {
+    "name": "Maria Sánches",
+    "content": "Quería aprender alemán como hobby, pero ahora me apasiona el idioma gracias a estas lecciones tan prácticas.",
+    "avatar": "/src/assets/avatar04.jpg"
+  },
+  {
+    "name": "Sandra Ruiz",
+    "content": "El enfoque en conversación me ayudó a sentirme más seguro para hablar alemán con mi pareja nativa.",
+    "avatar": "/src/assets/avatar05.jpg"
+  },
+  {
+    "name": "Pedro Sánches",
+    "content": "Mi objetivo era entender mejor el alemán para viajar. Ahora puedo comunicarme y disfrutar mis viajes al máximo.",
+    "avatar": "/src/assets/avatar06.jpg"
+  },
+  {
+    "name": "Carlos Jimenez ",
+    "content": "Los ejercicios y explicaciones prácticas me ayudaron a superar el miedo de hablar alemán en público.",
+    "avatar": "/src/assets/avatar07.jpg"
+  },
+  {
+    "name": "Marta Sánches",
+    "content": "El aprendizaje se siente natural y efectivo. En poco tiempo logré avances que nunca imaginé posibles.",
+    "avatar": "/src/assets/avatar08.jpg"
+  },
+  {
+    "name": "Pello Gilabert",
+    "content": "Gran método y excelente profesor. Ahora puedo disfrutar de series y libros en alemán sin dificultad.",
+    "avatar": "/src/assets/avatar09.jpg"
+  }
+]
