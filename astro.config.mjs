@@ -7,5 +7,7 @@ import icon from 'astro-icon';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), icon()]
+  integrations: [tailwind(), icon()],
+  site: 'https://germanicus1.github.io',
+  base: 'iLang',
 });
