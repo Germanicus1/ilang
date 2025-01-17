@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import avatar from '../../src/assets/avatar01.jpg';
 import { Icon } from 'astro-icon/components';
 import data from '../data/reviews.json';
 ---
@@ -27,8 +29,8 @@ import data from '../data/reviews.json';
 				{
 					[data[data.length - 1], ...data, data[0]].map((review, index) => (
 						<div class="review flex flex-[1_0_100%] flex-col items-center">
-							<img
-								src={review.avatar}
+							<Image
+								src={avatar}
 								alt={review.name}
 								class="review-avatar max-w-28 rounded-full"
 							/>
