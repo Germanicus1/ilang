@@ -9,5 +9,5 @@ import icon from 'astro-icon';
 export default defineConfig({
   integrations: [tailwind(), icon()],
   site: 'https://germanicus1.github.io',
-//  base: '/ilang/',
+ base: '/ilang',
 });
