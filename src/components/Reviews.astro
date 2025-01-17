@@ -28,7 +28,7 @@ import data from '../data/reviews.json';
 					[data[data.length - 1], ...data, data[0]].map((review, index) => (
 						<div class="review flex flex-[1_0_100%] flex-col items-center">
 							<img
-								src="../../src/assets/avatar01.jpg"
+								src={review.avatar}
 								alt={review.name}
 								class="review-avatar max-w-28 rounded-full"
 							/>
@@ -65,4 +65,4 @@ import data from '../data/reviews.json';
 	</div>
 </section>
 
-<script is:inline src={'/ilang/src/js/reviews.js'}></script>
+<script is:inline src={'/src/js/reviews.js'}></script>
