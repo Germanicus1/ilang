@@ -1,17 +1,20 @@
 name: Deploy to GitHub Pages
 
 on:
-  # Trigger the workflow on push to the `master` branch
+  # Trigger the workflow every time you push to the `main` branch
+  # Using a different branch name? Replace `main` with your branch’s name
   push:
     branches: [master]
-  # Allow manual trigger from GitHub Actions UI
+  # Allows you to run this workflow manually from the Actions tab on GitHub.
   workflow_dispatch:
 
+# Allow this job to clone the repo and create a page deployment
 permissions:
   contents: read
   pages: write
   id-token: write
 
+# Allow one concurrent deployment
 concurrency:
   group: "pages"
   cancel-in-progress: true
@@ -20,32 +23,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # Step 1: Checkout the repository
       - name: Checkout your repository using git
         uses: actions/checkout@v2
-
-      # Step 2: Set up Node.js environment
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-
-      # Step 3: Install dependencies
-      - name: Install dependencies
-        run: npm ci
-
-      # Step 4: Build the Astro site
-      - name: Build the project
-        env:
-          PUBLIC_BASEURL: /<your-repository-name> # Replace with your repository name
-        run: npm run build
-
-      # Step 5: Upload the build output as an artifact (for deployment)
-      - name: Upload artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: site
-          path: dist
+      - name: Install, build, and upload your site output
+        uses: withastro/action@v0
+        # with:
+        # path: . # The root location of your Astro project inside the repository. (optional)
+        # node-version: 16 # The specific version of Node that should be used to build your site. Defaults to 16. (optional)
+        # package-manager: yarn # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
 
   deploy:
     needs: build
@@ -54,13 +39,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      # Step 1: Download the artifact
-      - name: Download artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: site
-
-      # Step 2: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1

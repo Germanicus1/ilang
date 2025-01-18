@@ -9,5 +9,5 @@ const BASEURL = process.env.BASEURL || '';
 export default defineConfig({
   integrations: [tailwind(), icon()],
   site: 'https://germanicus1.github.io',
-  base: process.env.PUBLIC_BASEURL || '/',
+  base: '/ilang',
 });
