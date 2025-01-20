@@ -26,7 +26,7 @@ const navLinks = [
 ];
 ---
 
-<nav class="z-10 w-full">
+<nav class="left-0 top-0 z-20 w-full bg-bkg">
 	<div
 		class="nav-container mx-2 flex items-center justify-between border-0 bg-bkg p-2 sm:shadow-none"
 	>
@@ -65,10 +65,19 @@ const navLinks = [
 <script>
 	document.addEventListener('DOMContentLoaded', () => {
 		const navBtn = document.querySelector('#menu-btn');
+		const navLinks = document.querySelectorAll('.nav-links a');
 
+		// Toggle menu button
 		navBtn?.addEventListener('click', () => {
 			const expanded = navBtn.getAttribute('aria-expanded') === 'true';
 			navBtn.setAttribute('aria-expanded', (!expanded).toString());
+		});
+
+		// Close menu when a link is clicked
+		navLinks.forEach((link) => {
+			link.addEventListener('click', () => {
+				navBtn?.setAttribute('aria-expanded', 'false');
+			});
 		});
 	});
 </script>

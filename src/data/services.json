@@ -2,31 +2,31 @@
   {
     "icon": "fe:rocket",
     "name": "Niveles A1-C2",
-    "content": "Lorem ipsum dolor sit amet consectetur. Ultrices leo semper sapien massa suscipit pulvinar gravida lacus. Congue etiam sed vitae risus semper neque iaculis."
+    "content": "Aprende alemán desde cero o perfecciona tus habilidades hasta el nivel profesional. Clases adaptadas a todos los niveles."
   },
   {
     "icon": "fe:calendar",
     "name": "Todas las edades",
-    "content": "Lorem ipsum dolor sit amet consectetur. Ultrices leo semper sapien massa suscipit pulvinar gravida lacus."
+    "content": "Desde estudiantes de Secundaria hasta adultos, mis clases están diseñadas para cualquier edad y etapa de aprendizaje."
   },
   {
     "icon": "material-symbols:nest-remote-comfort-sensor-outline-rounded",
     "name": "Online",
-    "content": "Lorem ipsum dolor sit amet consectetur. Ultrices leo semper sapien massa suscipit pulvinar gravida lacus."
+    "content": "Clases cómodas y accesibles desde cualquier lugar, con herramientas digitales efectivas para un aprendizaje práctico."
   },
   {
     "icon": "material-symbols:frame-person-mic-rounded",
     "name": "Clases Individuales",
-    "content": "Lorem ipsum dolor sit amet consectetur. Ultrices leo semper sapien massa suscipit pulvinar gravida lacus."
+    "content": "Enfoque personalizado y adaptado a tus necesidades y ritmo de aprendizaje en cada sesión."
   },
   {
     "icon": "material-symbols:inbox-customize-rounded",
     "name": "Material Personalizado",
-    "content": "Lorem ipsum dolor sit amet consectetur. Ultrices leo semper sapien massa suscipit pulvinar gravida lacus."
+    "content": "Recibe materiales diseñados exclusivamente para tus objetivos y nivel, maximizando tu progreso."
   },
   {
     "icon": "fe:clock",
     "name": "Horario Felxible",
-    "content": "Lorem ipsum dolor sit amet consectetur. Ultrices leo semper sapien massa suscipit pulvinar gravida lacus."
+    "content": "Agenda tus clases en los horarios que mejor se adapten a tu vida, con máxima flexibilidad."
   }
 ]
