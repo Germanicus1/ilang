@@ -1,7 +1,8 @@
 ---
 import { Icon } from 'astro-icon/components';
 import data from '../data/reviews.json';
-const baseUrl = Astro.site?.pathname;
+const baseUrl: string = Astro.url?.pathname ?? '/';
+console.log('baseUrl: ', baseUrl);
 ---
 
 <section
@@ -11,7 +12,6 @@ const baseUrl = Astro.site?.pathname;
 	<div
 		class="review-container bg-trans relative flex max-w-sm items-stretch justify-between overflow-hidden sm:max-w-lg"
 	>
-		<!-- Left Button -->
 		<div>
 			<button
 				class="review-btn review-btn--prev absolute bottom-0 left-0 top-0 z-10 flex w-10 items-center justify-center"
@@ -22,7 +22,6 @@ const baseUrl = Astro.site?.pathname;
 			</button>
 		</div>
 
-		<!-- Reviews -->
 		<div class="border-1 flex-grow overflow-hidden border-2 border-accent1 pt-4">
 			<div class="reviews flex -translate-x-full">
 				{
@@ -45,7 +44,6 @@ const baseUrl = Astro.site?.pathname;
 			</div>
 		</div>
 
-		<!-- Right Button -->
 		<button
 			class="review-btn review-btn--next absolute bottom-0 right-0 top-0 z-10 flex w-10 items-center justify-center"
 			id="next"
@@ -53,7 +51,6 @@ const baseUrl = Astro.site?.pathname;
 		>
 			<Icon name="fe:arrow-right" size="30" />
 		</button>
-		<!-- TODO: MAke the indicators clickable -->
 		<div
 			class="indicator-container absolute bottom-4 left-1/2 flex -translate-x-1/2 justify-center gap-3"
 		>
@@ -66,4 +63,4 @@ const baseUrl = Astro.site?.pathname;
 	</div>
 </section>
 
-<script src={'/js/reviews.js'} defer></script>
+<script src={baseUrl + '/js/reviews.js'} defer></script>
