@@ -1,3 +1,5 @@
+import Hammer from "hammerjs";
+
 const reviewsSlider = document.querySelector(".reviews");
 const reviewBtns = document.querySelectorAll(".review-btn");
 const reviews = [...document.querySelectorAll(".review")];
@@ -5,16 +7,10 @@ const indicators = [...document.querySelectorAll(".indicator")];
 
 // Initial state
 let currentIndex = 1; // Start at the first real review (since first and last are duplicated)
-let isMoving = false; // Prevent multiple rapid clicks
-let startX = 0; // Touch start position
-let currentX = 0; // Current touch position
-let deltaX = 0; // Difference between start and current touch positions
-const swipeThreshold = 50; // Minimum swipe distance to trigger slide change
+let isMoving = false; // Prevent multiple clicks during animation
 
-// Add active class to the first indicator
 indicators[0].classList.add("bg-black");
 
-// Show the correct active indicator
 function showActiveIndicator() {
   indicators.forEach((ind) => ind.classList.remove("bg-black"));
   let activeIndicator;
@@ -29,27 +25,29 @@ function showActiveIndicator() {
   indicators[activeIndicator].classList.add("bg-black");
 }
 
-// Move the slider
+// Move slider to the current index
 function moveSlider(transitionTime) {
-  reviewsSlider.style.transitionDuration = `${transitionTime}ms`;
+  reviewsSlider.style.transitionDuration = transitionTime + "ms";
   reviewsSlider.style.transform = `translateX(-${currentIndex * 100}%)`;
   showActiveIndicator();
 }
 
 // Handle button clicks
 function handleReviewBtnClick(e) {
-  if (isMoving) return;
+  if (isMoving) {
+    return;
+  } // Prevent multiple rapid clicks
   isMoving = true;
   e.currentTarget.id === "next" ? currentIndex++ : currentIndex--;
   moveSlider(300);
 }
 
-// Add event listeners to buttons
+// Add event listeners for buttons
 reviewBtns.forEach((btn) => {
   btn.addEventListener("click", handleReviewBtnClick);
 });
 
-// Reset position if at the cloned slides
+// Handle slider transition end
 reviewsSlider.addEventListener("transitionend", () => {
   isMoving = false;
   if (currentIndex === 0) {
@@ -62,46 +60,32 @@ reviewsSlider.addEventListener("transitionend", () => {
   }
 });
 
-// Swipe functionality
-reviewsSlider.addEventListener("touchstart", (e) => {
-  startX = e.touches[0].clientX;
-  currentX = startX;
-  reviewsSlider.style.transitionDuration = "0ms"; // Disable smooth transition during swipe
-});
+// Initialize Hammer.js for swipe functionality
+const hammer = new Hammer(reviewsSlider);
 
-reviewsSlider.addEventListener("touchmove", (e) => {
-  currentX = e.touches[0].clientX;
-  deltaX = currentX - startX;
+// Configure Hammer.js to recognize swipe gestures
+hammer.get("swipe").set({ direction: Hammer.DIRECTION_HORIZONTAL });
 
-  // Move the slider dynamically as the user swipes
-  reviewsSlider.style.transform = `translateX(${-currentIndex * 100 + (deltaX / window.innerWidth) * 100}%)`;
-});
-
-reviewsSlider.addEventListener("touchend", () => {
-  // Determine if swipe threshold is met
-  if (Math.abs(deltaX) > swipeThreshold) {
-    if (deltaX > 0) {
-      currentIndex--; // Swipe right
-    } else {
-      currentIndex++; // Swipe left
-    }
+// Handle swipe left (next review)
+hammer.on("swipeleft", () => {
+  if (!isMoving) {
+    currentIndex++;
+    moveSlider(300);
   }
-
-  // Reset the slider position
-  moveSlider(300);
-
-  // Reset touch variables
-  deltaX = 0;
-  currentX = 0;
 });
 
-reviewsSlider.addEventListener("touchcancel", () => {
-  // Reset slider position and variables in case of cancellation
-  moveSlider(300);
-  deltaX = 0;
-  currentX = 0;
+// Handle swipe right (previous review)
+hammer.on("swiperight", () => {
+  if (!isMoving) {
+    currentIndex--;
+    moveSlider(300);
+  }
 });
 
+// Prevent horizontal scrolling on mobile during swipes
+reviewsSlider.addEventListener("touchmove", (e) => {
+  e.preventDefault();
+}, { passive: false });
 
 
 // const reviewsSlider = document.querySelector(".reviews");
