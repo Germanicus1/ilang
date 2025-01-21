@@ -1,32 +1,32 @@
 ---
 import { Icon } from 'astro-icon/components';
+const basePath = import.meta.env.BASE_URL;
 
 const navLinks = [
 	{
-		name: 'Home',
-		url: '/',
+		name: 'Inicio',
+		url: '',
 		style: 'transparent',
 	},
 	{
-		name: 'Pricing',
+		name: 'Precios',
 		url: '#pricing',
 		style: 'transparent',
 	},
 	{
-		name: 'About',
+		name: 'Sobre Mí',
 		url: '/about',
 		style: 'transparent',
 	},
 	{
-		name: 'Sign in',
-		url: '/signin',
+		name: 'Inicia Sesión',
+		url: 'signin',
 		style: 'transparent',
-		// "bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white shadow-md shadow-yellow-800",
 	},
 ];
 ---
 
-<nav class="left-0 top-0 z-20 w-full bg-bkg">
+<nav class="left-0 top-0 z-50 w-full bg-bkg">
 	<div
 		class="nav-container mx-2 flex items-center justify-between border-0 bg-bkg p-2 sm:shadow-none"
 	>
@@ -42,22 +42,28 @@ const navLinks = [
 			</button>
 			<!-- Menu -->
 			<ul
-				class="nav-links absolute left-0 right-0 top-10 flex -translate-y-[200%] transform flex-col items-center gap-3 bg-inherit p-4 shadow-lg peer-aria-expanded:translate-y-0 sm:static sm:top-0 sm:translate-y-0 sm:flex-row sm:gap-6 sm:bg-transparent sm:p-0 sm:shadow-none"
+				class="nav-links fixed left-0 right-0 top-12 z-50 flex -translate-y-[200%] transform flex-col items-center gap-3 bg-bkg p-4 shadow-lg peer-aria-expanded:translate-y-0 sm:static sm:top-0 sm:translate-y-0 sm:flex-row sm:gap-6 sm:bg-transparent sm:p-0 sm:shadow-none"
 				role="navigation"
 			>
 				{
 					navLinks.map((link) => (
 						<li
 							role="none"
-							class={`text-semibold w-full cursor-pointer rounded-sm p-2 text-center text-txt-header ~/lg:~text-lg/xl ${link.style}`}
+							class={`w-full cursor-pointer rounded-sm p-2 text-center font-semibold text-txt-header ~/lg:~text-lg/xl ${link.style}`}
 						>
-							<a href={link.url} class={`btn nav-link whitespace-nowrap`}>
+							<a href={`${basePath}` + link.url} class={`btn nav-link whitespace-nowrap`}>
 								{link.name}
 							</a>
 						</li>
 					))
 				}
 			</ul>
+			<!-- Backdrop -->
+			<div
+				id="menu-backdrop"
+				class="fixed inset-x-0 bottom-0 left-0 top-[48px] z-40 hidden bg-gray-900/50 sm:hidden"
+			>
+			</div>
 		</div>
 	</div>
 </nav>
@@ -66,18 +72,53 @@ const navLinks = [
 	document.addEventListener('DOMContentLoaded', () => {
 		const navBtn = document.querySelector('#menu-btn');
 		const navLinks = document.querySelectorAll('.nav-links a');
+		const backdrop = document.querySelector('#menu-backdrop');
+		const currentPath = window.location.pathname;
+		const body = document.body;
 
 		// Toggle menu button
 		navBtn?.addEventListener('click', () => {
 			const expanded = navBtn.getAttribute('aria-expanded') === 'true';
 			navBtn.setAttribute('aria-expanded', (!expanded).toString());
+
+			// Toggle backdrop and body scroll-lock
+			if (!expanded) {
+				backdrop?.classList.remove('hidden');
+				body.style.overflow = 'hidden'; // Disable scrolling
+			} else {
+				backdrop?.classList.add('hidden');
+				body.style.overflow = ''; // Enable scrolling
+			}
 		});
 
 		// Close menu when a link is clicked
 		navLinks.forEach((link) => {
+			if (link.getAttribute('href') === currentPath) {
+				link.classList.add(
+					'bg-gradient-to-r',
+					'from-indigo-500',
+					'via-purple-500',
+					'to-pink-500',
+					'bg-clip-text',
+					'text-transparent',
+					'font-bold',
+					'pointer-events-none'
+				);
+			} else {
+				link.classList.remove('text-txt-header', 'font-bold');
+			}
 			link.addEventListener('click', () => {
 				navBtn?.setAttribute('aria-expanded', 'false');
+				backdrop?.classList.add('hidden');
+				body.style.overflow = ''; // Enable scrolling
 			});
+		});
+
+		// Close menu when clicking on the backdrop
+		backdrop?.addEventListener('click', () => {
+			navBtn?.setAttribute('aria-expanded', 'false');
+			backdrop.classList.add('hidden');
+			body.style.overflow = ''; // Enable scrolling
 		});
 	});
 </script>

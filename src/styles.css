@@ -7,7 +7,7 @@
   --txt-header: 48, 100%, 10%;
   --txt-body: 48, 100%, 20%;
   --accent1: 48, 95.8%, 70%;
-  --marker: 178, 100%, 50%;
+  --accent2: --marker: 178, 100%, 50%;
 }
 
 .circle-sketch-highlight {

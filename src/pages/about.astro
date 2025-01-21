@@ -1,15 +1,22 @@
 ---
-import Layout from "../layouts/Layout.astro";
-const pageTitle = "GOP - About Me";
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+const baseUrl: string = Astro.url?.pathname ?? '/';
+import koblenz01 from '../../public/img/koblenz01.png';
+import koblenz02 from '../../public/img/koblenz02.png';
+import koblenz03 from '../../public/img/koblenz03.png';
+import koblenz04 from '../../public/img/koblenz04.png';
+
+const pageTitle = 'GOP - About Me';
 
 const identity = {
-  firstName: "Peter",
-  country: "Spain",
-  occupation: "Technical Writer",
-  hobbies: ["photography", "birdwatching", "baseball"],
+	firstName: 'Peter',
+	country: 'Spain',
+	occupation: 'Technical Writer',
+	hobbies: ['photography', 'birdwatching', 'baseball'],
 };
 
-const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+const skills = ['HTML', 'CSS', 'JavaScript', 'React', 'Astro', 'Writing Docs'];
 
 const happy = true;
 const finished = false;
@@ -17,43 +24,77 @@ const goal = 3;
 ---
 
 <Layout>
-  <h1>About Me</h1>
-  <h2>... and my new Astro site!</h2>
+	<div class="mt-[5%]">
+		<h1 class="mb-3 font-black tracking-tight text-txt-header ~/lg:~text-4xl/7xl">
+			Sobre mi
+		</h1>
+		<div class="mb-3 flex-col text-txt-body ~/lg:~text-base/xl sm:columns-2">
+			<p class="my-3">
+				¡Hola! Soy Peter, un alemán nativo de Koblenz, apasionado por ayudarte a aprender
+				alemán de forma natural y con confianza. Mi propio recorrido en el aprendizaje de
+				idiomas ha moldeado mi forma de enseñar. A los 21 años me mudé a Estocolmo,
+				Suecia, sin ningún conocimiento previo de sueco. A través de hablar, escuchar,
+				leer y escribir, no solo dominé el idioma, sino que también me convertí en editor
+				en jefe de una revista de informática sueca. Ahora, viviendo en Barcelona, he
+				afrontado otro desafío lingüístico más, lo que me da una comprensión profunda de
+				lo que se siente estar en tu lugar.
+			</p>
 
-  <p>
-    I am working through Astro's introductory tutorial. This is the second page
-    on my website, and it's the first one I built myself!
-  </p>
-
-  <p>
-    This site will update as I complete more of the tutorial, so keep checking
-    back and see how my journey is going!
-  </p>
-
-  <p>Here are a few facts about me:</p>
-  <ul>
-    <li>My name is {identity.firstName}.</li>
-    <li>I live in {identity.country} and I work as a {identity.occupation}.</li>
-    {
-      identity.hobbies.length >= 2 && (
-        <li>
-          Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}
-        </li>
-      )
-    }
-  </ul>
-  <p>My skills are:</p>
-  <ul>
-    {skills.map((skill) => <li>{skill}</li>)}
-  </ul>
-
-  {happy && <p>I am happy to be learning Astro!</p>}
-  {finished && <p>I finished this tutorial!</p>}
-  {
-    goal === 3 ? (
-      <p>My goal is to finish in 3 days.</p>
-    ) : (
-      <p>My goal is not 3 days.</p>
-    )
-  }
+			<p class="my-3">
+				Creo que la mejor manera de aprender un idioma es usándolo. Mis clases se centran
+				en la conversación y habilidades prácticas, con la gramática introducida de forma
+				natural como parte del proceso. Cada sesión es individual y se adapta a tus
+				necesidades únicas, asegurando que te sientas apoyado y empoderado en cada paso
+				del camino.
+			</p>
+			<p class="my-3">
+				Ya sea que estés preparándote para un examen, avanzando en tu carrera o
+				aprendiendo por enriquecimiento personal, te ayudaré a visualizar y lograr tu
+				meta: hablar alemán con fluidez, orgullo y confianza.
+			</p>
+			<p class="my-3">¡Comencemos este viaje juntos!</p>
+			<div class="">
+				<Image
+					src={koblenz01}
+					alt="Koblenz"
+					loading="lazy"
+					decoding="async"
+					class="border-8 border-white sm:rounded-md"
+				/>
+			</div>
+		</div>
+		<div class="sm:columns-3">
+			<Image
+				src={koblenz02}
+				alt="Koblenz"
+				loading="lazy"
+				decoding="async"
+				class="border-8 border-white sm:ml-6 sm:origin-top-left sm:rotate-3 sm:rounded-md"
+			/>
+			<Image
+				src={koblenz03}
+				alt="Koblenz"
+				loading="lazy"
+				decoding="async"
+				class="my-4 border-8 border-white sm:origin-top-left sm:-rotate-6 sm:rounded-md"
+			/>
+			<Image
+				src={koblenz04}
+				alt="Koblenz"
+				loading="lazy"
+				decoding="async"
+				class="border-8 border-white sm:-mt-16 sm:origin-top-right sm:rotate-[8deg] sm:rounded-md"
+			/>
+		</div>
+	</div>
 </Layout>
+
+<style>
+	blob_img {
+		max-width: 100%;
+		clip-path: circle(50%);
+		shape-outside: circle(100%);
+		shape-margin: 20px;
+		float: right;
+	}
+</style>
