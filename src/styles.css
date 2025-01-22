@@ -26,3 +26,15 @@
   top: 0.1em;
   padding: 0 0.25em;
 }
+
+/* Disable horizontal scrolling globally */
+html,
+body {
+  overflow-x: hidden;
+  touch-action: pan-y; /* Allow only vertical scrolling */
+}
+
+/* Allow gestures (swiping) on the reviews slider */
+.reviews {
+  touch-action: pan-y pinch-zoom; /* Allow gestures for the slider */
+}

@@ -167,12 +167,24 @@ function isMobile() {
   return window.innerWidth <= 768; // Adjust breakpoint for your needs
 }
 
-document.addEventListener('touchmove',
+// Disable horizontal scrolling globally, except for reviews slider
+document.addEventListener(
+  "touchmove",
   (e) => {
     if (isMobile()) {
-      console.log('isMobile: ', isMobile)
-      e.preventDefault(); // Prevent horizontal scrolling
+      const targetElement = e.target.closest(".reviews");
+
+      if (!targetElement) {
+        const touch = e.touches[0];
+        const deltaX = Math.abs(touch.clientX - touch.screenX); // Horizontal movement
+        const deltaY = Math.abs(touch.clientY - touch.screenY); // Vertical movement
+
+        // Prevent horizontal scrolling globally except in reviews
+        if (deltaX > deltaY) {
+          e.preventDefault();
+        }
+      }
     }
   },
-  { passive: false }
+  { passive: false } // Allow preventDefault to work
 );
