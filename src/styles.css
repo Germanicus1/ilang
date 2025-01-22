@@ -30,11 +30,18 @@
 /* Disable horizontal scrolling globally */
 html,
 body {
-  overflow-x: hidden;
-  touch-action: pan-y; /* Allow only vertical scrolling */
+  overflow-x: hidden; /* Disable horizontal overflow */
+  touch-action: pan-y; /* Restrict gestures to vertical scrolling */
+}
+
+@media (max-width: 768px) {
+  html,
+  body {
+    touch-action: pan-y; /* Ensure vertical gestures are allowed on mobile */
+  }
 }
 
 /* Allow gestures (swiping) on the reviews slider */
-.reviews {
-  touch-action: pan-y pinch-zoom; /* Allow gestures for the slider */
-}
+/* .reviews {
+  touch-action: pan-y pinch-zoom;
+} */
