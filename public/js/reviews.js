@@ -161,6 +161,17 @@ hammer.on("swiperight", (e) => {
 });
 
 // Prevent horizontal scrolling on mobile during swipes
-reviewsSlider.addEventListener("touchmove", (e) => {
-  e.preventDefault();
-}, { passive: false });
+
+// Detect if the device is mobile
+function isMobile() {
+  return window.innerWidth <= 768; // Adjust breakpoint for your needs
+}
+
+document.addEventListener(
+  (e) => {
+    if (isMobile()) {
+      e.preventDefault(); // Prevent horizontal scrolling
+    }
+  },
+  { passive: false }
+);
