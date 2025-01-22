@@ -143,7 +143,7 @@ const hammer = new Hammer(reviewsSlider);
 hammer.get("swipe").set({ direction: Hammer.DIRECTION_HORIZONTAL });
 
 // Handle swipe left (next review)
-hammer.on("swipeleft tab press", (e) => {
+hammer.on("swipeleft", (e) => {
   console.log(e.type)
   if (!isMoving) {
     currentIndex++;
@@ -161,7 +161,6 @@ hammer.on("swiperight", (e) => {
 });
 
 // Prevent horizontal scrolling on mobile during swipes
-
 // Detect if the device is mobile
 function isMobile() {
   return window.innerWidth <= 768; // Adjust breakpoint for your needs

@@ -28,20 +28,20 @@
 }
 
 /* Disable horizontal scrolling globally */
-html,
+/* html,
 body {
-  overflow-x: hidden; /* Disable horizontal overflow */
-  touch-action: pan-y; /* Restrict gestures to vertical scrolling */
-}
+  overflow-x: hidden;
+  touch-action: pan-y;
+} */
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   html,
   body {
-    touch-action: pan-y; /* Ensure vertical gestures are allowed on mobile */
+    touch-action: pan-y;
   }
-}
+} */
 
 /* Allow gestures (swiping) on the reviews slider */
-/* .reviews {
+.reviews {
   touch-action: pan-y pinch-zoom;
-} */
+}
