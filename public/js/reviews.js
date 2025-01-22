@@ -77,10 +77,10 @@ let currentIndex = 1; // Start at the first real review
 let isMoving = false; // Prevent multiple rapid clicks
 
 // Debugging logs
-console.log("Reviews Slider: ", reviewsSlider);
-console.log("Review Buttons: ", reviewBtns);
-console.log("Reviews: ", reviews);
-console.log("Indicators: ", indicators);
+// console.log("Reviews Slider: ", reviewsSlider);
+// console.log("Review Buttons: ", reviewBtns);
+// console.log("Reviews: ", reviews);
+// console.log("Indicators: ", indicators);
 
 if (indicators.length > 0) {
   indicators[0].classList.add("bg-black");
@@ -147,7 +147,7 @@ hammer.on("swipeleft tab press", (e) => {
   console.log(e.type)
   if (!isMoving) {
     currentIndex++;
-    moveSlider(1);
+    moveSlider(300);
   }
 });
 
@@ -156,7 +156,7 @@ hammer.on("swiperight", (e) => {
   console.log(e.type)
   if (!isMoving) {
     currentIndex--;
-    moveSlider(1);
+    moveSlider(300);
   }
 });
 
@@ -167,9 +167,10 @@ function isMobile() {
   return window.innerWidth <= 768; // Adjust breakpoint for your needs
 }
 
-document.addEventListener(
+document.addEventListener('touchmove',
   (e) => {
     if (isMobile()) {
+      console.log('isMobile: ', isMobile)
       e.preventDefault(); // Prevent horizontal scrolling
     }
   },
