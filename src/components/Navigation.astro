@@ -74,6 +74,8 @@ const navLinks = [
 		const navLinks = document.querySelectorAll('.nav-links a');
 		const backdrop = document.querySelector('#menu-backdrop');
 		const currentPath = window.location.pathname;
+		const basePath = '/ilang'; //import.meta.env.BASE_URL;
+		console.log('currentPath: ', currentPath);
 		const body = document.body;
 
 		// Toggle menu button
@@ -94,6 +96,7 @@ const navLinks = [
 		// Close menu when a link is clicked
 		navLinks.forEach((link) => {
 			if (link.getAttribute('href') === currentPath) {
+				console.log("link.getAttribute('href'): ", link.getAttribute('href'));
 				link.classList.add(
 					'bg-gradient-to-r',
 					'from-indigo-500',

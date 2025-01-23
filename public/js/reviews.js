@@ -89,7 +89,6 @@ if (indicators.length > 0) {
 function showActiveIndicator() {
   indicators.forEach((ind) => ind.classList.remove("bg-black"));
   let activeIndicator;
-
   if (currentIndex === 0) {
     activeIndicator = indicators.length - 1;
   } else if (currentIndex === reviews.length - 1) {
@@ -110,10 +109,7 @@ function moveSlider(transitionTime) {
 
 function handleReviewBtnClick(e) {
   if (isMoving) return;
-
-  console.log(`${e.currentTarget.id} clicked`);
   isMoving = true;
-
   e.currentTarget.id === "next" ? currentIndex++ : currentIndex--;
   moveSlider(300);
 }
@@ -124,7 +120,6 @@ reviewBtns.forEach((btn) => {
 
 reviewsSlider.addEventListener("transitionend", () => {
   isMoving = false;
-
   if (currentIndex === 0) {
     currentIndex = reviews.length - 2;
     moveSlider(1);
@@ -144,7 +139,6 @@ hammer.get("swipe").set({ direction: Hammer.DIRECTION_HORIZONTAL });
 
 // Handle swipe left (next review)
 hammer.on("swipeleft", (e) => {
-  console.log(e.type)
   if (!isMoving) {
     currentIndex++;
     moveSlider(300);
@@ -153,7 +147,6 @@ hammer.on("swipeleft", (e) => {
 
 // Handle swipe right (previous review)
 hammer.on("swiperight", (e) => {
-  console.log(e.type)
   if (!isMoving) {
     currentIndex--;
     moveSlider(300);
