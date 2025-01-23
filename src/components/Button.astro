@@ -2,12 +2,15 @@
 const { text, link, style, isHoverEffectEnabled } = Astro.props;
 ---
 
-<div class="p-5 flex justify-center">
-  <a
-    href={link}
-    class={`flex justify-center items-center rounded-lg w-full cursor-pointer p-2 sm:text-xl font-semibold text-center ${
-    isHoverEffectEnabled ? "hover:mix-blend-hard-light hover:shadow-[0px_0px_20px_5px_rgba(250,204,40,1)]" : ""} ${style}`}
-  >
-    {text}
-  </a>
+<div class="flex justify-center p-5">
+	<a
+		href={link}
+		class={`flex justify-center items-center rounded-lg w-full cursor-pointer py-2 sm:text-xl font-semibold text-center ${
+			isHoverEffectEnabled
+				? 'hover:mix-blend-hard-light hover:shadow-[0px_0px_20px_5px_rgba(250,204,40,1)]'
+				: ''
+		} ${style}`}
+	>
+		{text}
+	</a>
 </div>

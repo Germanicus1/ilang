@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import myHeroImage from '../../src/assets/hero_image_all.png';
+import Button from './Button.astro';
 const heroText = 'Deutsch sprechen wie ein Profi.';
 ---
 
@@ -10,7 +11,6 @@ const heroText = 'Deutsch sprechen wie ein Profi.';
 		<h1 class="font-black tracking-tight text-txt-header ~/lg:~text-4xl/7xl">
 			{heroText}
 		</h1>
-		<!-- TODO: Fix text size to become bigger when on tablet or desktop -->
 		<p class="mt-4 font-medium text-txt-body ~/lg:~text-base/3xl">
 			¡Domina el alemán como un nativo! Si buscas clases particulares personalizadas y
 			flexibles, este formato es para ti. Mejora rápido en áreas clave para tu carrera,
@@ -27,7 +27,7 @@ const heroText = 'Deutsch sprechen wie ein Profi.';
 	</div>
 
 	<!-- Right Side: Image -->
-	<div class="-z-10 -mr-[10%] sm:mr-0">
+	<div class="-z-10 -mr-[10%] mt-6 sm:mr-0">
 		<Image
 			src={myHeroImage}
 			alt="Peter Kerschbaumer"
@@ -38,13 +38,11 @@ const heroText = 'Deutsch sprechen wie ein Profi.';
 	</div>
 </section>
 <!-- Contact button for small screens. Spans over the full width of the screen. -->
-<div
-	class="m-auto flex w-full max-w-xs place-items-center px-5 py-5 sm:hidden sm:items-center"
->
+<div class="flex place-items-center p-5 sm:hidden sm:items-center">
 	<!-- TODO: use the button component like in pricing -->
 	<a
-		href="https://wa.me/34673721006"
-		class=`rounded-lg w-full cursor-pointer rounded-sm p-2 text-center text-sm bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white shadow-md shadow-yellow-800`
+		href="#"
+		class=`rounded-lg w-full cursor-pointer rounded-sm p-2 text-center text-sm bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white shadow-md shadow-yellow-800 hover:shadow-[0px_0px_20px_5px_rgba(250,204,40,1)]`
 		>Contáctame</a
 	>
 </div>
