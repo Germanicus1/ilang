@@ -22,7 +22,7 @@ export default {
 				'txt-header': 'hsl(var(--txt-header))',
 				'txt-body': 'hsl(var(--txt-body))',
 				'accent1': 'hsl(var(--accent1))',
-				'marker': 'hsl(var(--marker))'
+				'accent2': 'hsl(var(--accent2))'
 			},
 			fontFamily: {
 				sans: ['lato', ...defaultTheme.fontFamily.sans]

@@ -61,17 +61,11 @@ const goal = 3;
 				meta: hablar alemán con fluidez, orgullo y confianza.
 			</p>
 			<p class="my-3 mb-10 font-semibold">¡Comencemos este viaje juntos!</p>
-			<div class="">
-				<figure>
-					<Image
-						src={koblenz01}
-						alt="Koblenz"
-						loading="lazy"
-						decoding="async"
-						class="border-8 border-white sm:rounded-md"
-					/>
+			<div>
+				<figure class="border-accent2 relative border-8 sm:rounded-md">
+					<Image src={koblenz01} alt="Koblenz" loading="lazy" decoding="async" class="" />
 					<figcaption
-						class="bg-white px-2 pb-1 text-xs sm:-mt-[4.5rem] sm:ml-3 sm:w-11/12 sm:origin-top-left sm:rotate-0 sm:bg-black sm:bg-opacity-30 sm:text-white"
+						class="absolute bottom-2 mx-2 block bg-black bg-opacity-30 px-2 pb-1 text-xs text-white"
 					>
 						Deutsches Eck (en español Rincón Alemán) es el nombre de una pequeña península
 						en Coblenza (Alemania) formada en la desembocadura del río Mosela en el Rin
@@ -79,49 +73,38 @@ const goal = 3;
 				</figure>
 			</div>
 		</div>
-		<div class="sm:columns-3">
-			<figure>
-				<Image
-					src={koblenz02}
-					alt="Koblenz"
-					loading="lazy"
-					decoding="async"
-					class="mt-4 border-8 border-white sm:ml-6 sm:origin-top-left sm:rotate-3 sm:rounded-md"
-				/>
+		<div class="grid gap-2 sm:mt-10 sm:flex-none sm:grid-cols-3">
+			<!-- <div class="grid-cols-3"> -->
+			<figure
+				class="border-accent2 relative mt-2 rounded-md border-8 sm:origin-bottom-right sm:rotate-3"
+			>
+				<Image src={koblenz02} alt="Koblenz" loading="lazy" decoding="async" class="" />
 				<figcaption
-					class="bg-white px-2 pb-1 text-xs sm:-mt-[4.7rem] sm:ml-7 sm:w-11/12 sm:origin-top-left sm:rotate-3 sm:bg-black sm:bg-opacity-30 sm:text-white"
+					class="absolute bottom-2 mx-2 block bg-black bg-opacity-30 px-2 pb-1 text-xs text-white"
 				>
 					La fortaleza de Ehrenbreitstein (en alemán: Festung Ehrenbreitstein) es una
 					fortaleza construida en el siglo XVI en Coblenza.
 				</figcaption>
 			</figure>
 
-			<figure>
-				<Image
-					src={koblenz03}
-					alt="Koblenz"
-					loading="lazy"
-					decoding="async"
-					class="mt-4 border-8 border-white sm:origin-top-left sm:-rotate-6 sm:rounded-md"
-				/>
+			<figure
+				class="border-accent2 relative rounded-md border-8 sm:origin-bottom-left sm:-rotate-6"
+			>
+				<Image src={koblenz03} alt="Koblenz" loading="lazy" decoding="async" class="" />
 				<figcaption
-					class="bg-white px-2 pb-1 text-xs sm:-mt-[4.3rem] sm:ml-6 sm:w-5/6 sm:origin-top-left sm:-rotate-6 sm:bg-black sm:bg-opacity-30 sm:text-white"
+					class="absolute bottom-2 mx-2 block bg-black bg-opacity-30 px-2 pb-1 text-xs text-white"
 				>
 					Coblenza es una cidudad fundado hace mas de 2000 mil años y tiene muchos
 					rincones bonitos.
 				</figcaption>
 			</figure>
 
-			<figure>
-				<Image
-					src={koblenz04}
-					alt="Koblenz"
-					loading="lazy"
-					decoding="async"
-					class="mt-4 border-8 border-white sm:-mt-16 sm:origin-top-right sm:rotate-[8deg] sm:rounded-md"
-				/>
+			<figure
+				class="border-accent2 relative rounded-md border-8 sm:origin-top-right sm:rotate-6"
+			>
+				<Image src={koblenz04} alt="Koblenz" loading="lazy" decoding="async" class="" />
 				<figcaption
-					class="bg-white px-2 pb-1 text-xs sm:-mt-24 sm:ml-1 sm:w-5/6 sm:origin-top-left sm:rotate-[8deg] sm:bg-black sm:bg-opacity-30 sm:text-white"
+					class="absolute bottom-2 mx-2 block bg-black bg-opacity-30 px-2 pb-1 text-xs text-white"
 				>
 					En en alrededor de Coblenza se encuantran muchos casteles medivales.
 				</figcaption>
