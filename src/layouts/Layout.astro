@@ -22,11 +22,13 @@ import '../styles.css';
 		<Navigation />
 		<main class="relative mx-[2%] flex-grow overflow-x-hidden">
 			<slot />
-			<!-- TODO: make whatsapp this a button -->
-			<Icon
-				name="whatsapp"
-				class="fixed bottom-10 right-1 z-20 size-16 drop-shadow-[10px_10px_10px_rgba(202,138,4,0.5)] sm:hidden"
-			/>
+			<div
+				class="whatsapp fixed bottom-5 right-1 z-20 size-16 drop-shadow-[10px_10px_10px_rgba(202,138,4,0.5)] sm:hidden"
+			>
+				<a href="https://wa.me/34673721006">
+					<Icon name="whatsapp" class="size-16" />
+				</a>
+			</div>
 		</main>
 
 		<footer class="relative w-full text-center">
