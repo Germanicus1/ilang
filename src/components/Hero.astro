@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
 import myHeroImage from '../../src/assets/hero_image_all.png';
-import Button from './Button.astro';
 const heroText = 'Deutsch sprechen wie ein Profi.';
 ---
 
@@ -27,7 +27,7 @@ const heroText = 'Deutsch sprechen wie ein Profi.';
 	</div>
 
 	<!-- Right Side: Image -->
-	<div class="-z-10 -mr-[10%] mt-6 sm:mr-0">
+	<div class="relative -z-10 -mr-[10%] mt-6 sm:mr-0">
 		<Image
 			src={myHeroImage}
 			alt="Peter Kerschbaumer"
@@ -37,9 +37,8 @@ const heroText = 'Deutsch sprechen wie ein Profi.';
 		/>
 	</div>
 </section>
-<!-- Contact button for small screens. Spans over the full width of the screen. -->
+<!-- Contact button for small screens -->
 <div class="flex place-items-center p-5 sm:hidden sm:items-center">
-	<!-- TODO: use the button component like in pricing -->
 	<a
 		href="#"
 		class=`rounded-lg w-full cursor-pointer rounded-sm p-2 text-center text-sm bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white shadow-md shadow-yellow-800 hover:shadow-[0px_0px_20px_5px_rgba(250,204,40,1)]`
