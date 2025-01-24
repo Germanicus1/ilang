@@ -7,21 +7,6 @@ import koblenz02 from '../../public/img/koblenz02.png';
 import koblenz03 from '../../public/img/koblenz03.png';
 import koblenz04 from '../../public/img/koblenz04.png';
 import pkRound from '../../public/img/pk-round.png';
-
-const pageTitle = 'GOP - About Me';
-
-const identity = {
-	firstName: 'Peter',
-	country: 'Spain',
-	occupation: 'Technical Writer',
-	hobbies: ['photography', 'birdwatching', 'baseball'],
-};
-
-const skills = ['HTML', 'CSS', 'JavaScript', 'React', 'Astro', 'Writing Docs'];
-
-const happy = true;
-const finished = false;
-const goal = 3;
 ---
 
 <Layout>
@@ -62,7 +47,7 @@ const goal = 3;
 			</p>
 			<p class="my-3 mb-10 font-semibold">¡Comencemos este viaje juntos!</p>
 			<div>
-				<figure class="border-accent2 relative border-8 sm:rounded-md">
+				<figure class="relative border-8 border-accent2 sm:rounded-md">
 					<Image src={koblenz01} alt="Koblenz" loading="lazy" decoding="async" class="" />
 					<figcaption
 						class="absolute bottom-2 mx-2 block bg-black bg-opacity-30 px-2 pb-1 text-xs text-white"
@@ -76,7 +61,7 @@ const goal = 3;
 		<div class="grid gap-2 sm:mt-10 sm:flex-none sm:grid-cols-3">
 			<!-- <div class="grid-cols-3"> -->
 			<figure
-				class="border-accent2 relative mt-2 rounded-md border-8 sm:origin-bottom-right sm:rotate-3"
+				class="relative mt-2 rounded-md border-8 border-accent2 sm:origin-bottom-right sm:rotate-3"
 			>
 				<Image src={koblenz02} alt="Koblenz" loading="lazy" decoding="async" class="" />
 				<figcaption
@@ -88,7 +73,7 @@ const goal = 3;
 			</figure>
 
 			<figure
-				class="border-accent2 relative rounded-md border-8 sm:origin-bottom-left sm:-rotate-6"
+				class="relative rounded-md border-8 border-accent2 sm:origin-bottom-left sm:-rotate-6"
 			>
 				<Image src={koblenz03} alt="Koblenz" loading="lazy" decoding="async" class="" />
 				<figcaption
@@ -100,7 +85,7 @@ const goal = 3;
 			</figure>
 
 			<figure
-				class="border-accent2 relative rounded-md border-8 sm:origin-top-right sm:rotate-6"
+				class="relative rounded-md border-8 border-accent2 sm:origin-top-right sm:rotate-6"
 			>
 				<Image src={koblenz04} alt="Koblenz" loading="lazy" decoding="async" class="" />
 				<figcaption
