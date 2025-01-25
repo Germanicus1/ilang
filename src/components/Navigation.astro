@@ -26,11 +26,11 @@ const navLinks = [
 ];
 ---
 
-<nav class="left-0 top-0 z-50 w-full bg-bkg">
+<nav class="sticky left-0 top-0 z-50 w-full border-b-2 border-b-yellow-500 bg-bkg">
 	<div
 		class="nav-container mx-2 flex items-center justify-between border-0 bg-bkg p-2 sm:shadow-none"
 	>
-		<Icon name="global" size="clamp(30px, 6vw, 70px)" class="logo" />
+		<Icon name="global" size="clamp(30px, 4vw, 50px)" class="logo" />
 		<div class="nav-wrapper flex items-center gap-4 bg-inherit">
 			<button
 				class="btn btn--menu peer sm:hidden"
@@ -42,14 +42,14 @@ const navLinks = [
 			</button>
 			<!-- Menu -->
 			<ul
-				class="nav-links fixed left-0 right-0 top-12 z-50 flex -translate-y-[200%] transform flex-col items-center gap-3 bg-bkg p-4 shadow-lg peer-aria-expanded:translate-y-0 sm:static sm:top-0 sm:translate-y-0 sm:flex-row sm:gap-6 sm:bg-transparent sm:p-0 sm:shadow-none"
+				class="nav-links fixed left-0 right-0 top-12 z-50 flex -translate-y-[200%] transform flex-col items-center gap-3 bg-bkg p-4 font-semibold text-txt-header shadow-lg peer-aria-expanded:translate-y-0 ~/lg:~text-base/xl sm:static sm:top-0 sm:translate-y-0 sm:flex-row sm:gap-6 sm:bg-transparent sm:p-0 sm:shadow-none"
 				role="navigation"
 			>
 				{
 					navLinks.map((link) => (
 						<li
 							role="none"
-							class={`w-full cursor-pointer rounded-sm p-2 text-center font-semibold text-txt-header ~/lg:~text-base/lg ${link.style}`}
+							class={`w-full cursor-pointer rounded-sm p-2 text-center ${link.style}`}
 						>
 							<a href={`${basePath}` + link.url} class={`btn nav-link whitespace-nowrap`}>
 								{link.name}
