@@ -8,6 +8,16 @@
   --txt-body: 48, 100%, 20%;
   --accent1: 48, 96%, 70%;
   --accent2: 48, 96%, 89%;
+  --accent3: 53, 98%, 77%;
+  --level-A1: 83, 78%, 55%;
+  --level-A2: 85, 85%, 35%;
+  --level-B1: 188, 86%, 53%;
+  --level-B2: 200, 98%, 39%;
+  --level-C1: 27, 96%, 61%;
+  --level-C2: 21, 90%, 48%;
+  --levelA: 81, 88%, 80%;
+  --levelB: 186, 94%, 82%;
+  --levelC: 288, 96%, 91%;
 }
 
 .circle-sketch-highlight {

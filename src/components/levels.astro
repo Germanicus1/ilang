@@ -1,0 +1,41 @@
+---
+import { Icon } from 'astro-icon/components';
+import data from '../data/levels.json';
+---
+
+<section class="services-wrapper relative pt-10 sm:grid-cols-2">
+	<h1 class="sr-only">Niveles</h1>
+	<div
+		class="levels-container container-sm grid grid-cols-1 gap-y-14 ~sm/lg:~gap-x-3/8 ~/lg:~text-xs/xl sm:grid-cols-2 lg:mx-10"
+	>
+		{
+			data.map((card) => (
+				<div
+					class={`level-card grid-sm border-level-${card.level} relative w-full border-t-[20px] p-5 before:absolute before:-top-[3.2rem] before:left-1/2 before:-translate-x-1/2 before:whitespace-nowrap before:text-balance before:rounded-full before:border-8 before:border-bkg before:px-4 before:py-4 before:text-center before:text-2xl before:font-black before:uppercase before:text-white before:bg-level-${card.level} before:content-['${card.level}']`}
+				>
+					<p class="card-name relative mt-5 flex justify-center text-center font-black uppercase tracking-wider ~/lg:~text-xl/5xl">
+						{card.name}
+					</p>
+					<p class="card-name flex justify-center text-center text-xs uppercase tracking-wide">
+						{card.synopsis}
+					</p>
+
+					<p class="relative my-5 flex items-center justify-center">{card.description}</p>
+					<p class="mb-2 font-bold">Te permite a:</p>
+					<ul class="level-card-feature-container mx-3">
+						{card.goals.map((goal) => (
+							<li class="level-feature flex items-start gap-2">
+								<Icon
+									name="fe:check-circle-o"
+									size="1.5rem"
+									class="text-muted shrink-0"
+								/>
+								<span class="flex-1 text-left">{goal}</span>
+							</li>
+						))}
+					</ul>
+				</div>
+			))
+		}
+	</div>
+</section>
