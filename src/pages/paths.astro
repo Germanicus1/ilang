@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import levels from '../../public/img/levels.png';
 import Layout from '../layouts/Layout.astro';
 import Levels from '../components/levels.astro';
 ---
@@ -8,6 +10,24 @@ import Levels from '../components/levels.astro';
 		<h1 class="mb-5 font-black tracking-tight text-txt-header ~/lg:~text-4xl/7xl">
 			Rutas de Aprendizaje
 		</h1>
+		<div class="flex ~mb-2/4">
+			<p class="~/lg:~text-base/2xl">
+				Para hacer comparables los conocimientos previos al aprender idiomas, los cursos
+				de idiomas en casi todo el mundo se clasifican generalmente en los niveles A1, A2,
+				B1, B2, C1 y C2, lo que también aplica a mi enseñanza. El nivel A1 está dirigido a
+				principiantes, mientras que el nivel C2 está destinado a participantes que hablan
+				casi como nativos. Este sistema de niveles corresponde al Marco Común Europeo de
+				Referencia para las Lenguas (MCER). Mi enseñaza de alemán están diseñados y
+				alineados de acuerdo con el MCER.
+			</p>
+			<Image
+				src={levels}
+				alt="Peter Kerschbaumer"
+				loading="lazy"
+				decoding="async"
+				class="hidden ~/lg:~max-w-[14rem]/[32rem] sm:flex"
+			/>
+		</div>
 	</div>
 	<Levels />
 </Layout>
