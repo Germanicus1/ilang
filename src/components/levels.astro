@@ -6,7 +6,7 @@ import data from '../data/levels.json';
 <section class="services-wrapper relative pt-10 sm:grid-cols-2">
 	<h1 class="sr-only">Niveles</h1>
 	<div
-		class="levels-container container-sm grid grid-cols-1 gap-y-14 ~sm/lg:~gap-x-3/8 ~/lg:~text-xs/xl sm:grid-cols-2 lg:mx-10"
+		class="levels-container container-sm grid grid-cols-1 gap-y-14 text-pretty text-justify ~sm/lg:~gap-x-3/8 ~/lg:~text-sm/xl sm:grid-cols-2 lg:mx-10"
 	>
 		{
 			data.map((card) => (
@@ -16,7 +16,7 @@ import data from '../data/levels.json';
 					<p class="card-name relative mt-5 flex justify-center text-center font-black uppercase tracking-wider ~/lg:~text-xl/5xl">
 						{card.name}
 					</p>
-					<p class="card-name flex justify-center text-center text-xs uppercase tracking-wide">
+					<p class="card-name flex justify-center text-pretty text-center uppercase tracking-wide ~/lg:~text-xs/base">
 						{card.synopsis}
 					</p>
 
