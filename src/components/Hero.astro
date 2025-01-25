@@ -1,8 +1,16 @@
 ---
 import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon/components';
+import Contact from './contact.astro';
 import myHeroImage from '../../src/assets/hero_image_all.png';
 const heroText = 'Deutsch sprechen wie ein Profi.';
+import {
+	Button,
+	Modal,
+	ModalHeader,
+	ModalBody,
+	ModalFooter,
+} from 'free-astro-components';
 ---
 
 <section class="hero-wrapper flex">
@@ -17,12 +25,23 @@ const heroText = 'Deutsch sprechen wie ein Profi.';
 			empleo o estudios. <span class="font-black">¡Alcanza tus metas ahora!</span>
 		</p>
 		<!-- Contact button. Shown on devices bigger than sm (640px) -->
+
 		<div class="hidden w-full p-8 sm:flex">
 			<a
-				href="https://wa.me/34673721006"
-				class=`rounded-lg w-3/4 cursor-pointer p-2 text-center sm:text-xl font-semibold sm:text-sm bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white shadow-md hover:shadow-none shadow-yellow-800`
-				>Contáctame</a
+				href="#"
+				class="w-3/4 cursor-pointer rounded-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-2 text-center font-semibold text-white shadow-md shadow-yellow-800 hover:shadow-none sm:text-xl"
+				data-modal-trigger="contact-modal">Contáctame</a
 			>
+			<Modal id="contact-modal">
+				<ModalHeader>
+					<h4>Modal Title</h4>
+				</ModalHeader>
+				<ModalBody />
+				<Contact />
+				<ModalFooter>
+					<Button label="Close" data-modal-close />
+				</ModalFooter>
+			</Modal>
 		</div>
 	</div>
 
@@ -45,3 +64,15 @@ const heroText = 'Deutsch sprechen wie ein Profi.';
 		>Contáctame</a
 	>
 </div>
+
+<Modal id="modal-id">
+	<ModalHeader>
+		<h4>Modal Title</h4>
+	</ModalHeader>
+	<ModalBody>
+		<Contact />
+	</ModalBody>
+	<ModalFooter>
+		<Button label="Close" data-modal-close />
+	</ModalFooter>
+</Modal>
