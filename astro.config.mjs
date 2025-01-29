@@ -8,6 +8,6 @@ const BASEURL = process.env.BASEURL || '';
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), icon()],
-  site: 'https://germanicus1.github.io',
-  base: '/ilang',
+  site: 'https://ilang.kerschbaumer',
+  base: '/',
 });
