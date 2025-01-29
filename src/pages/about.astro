@@ -20,7 +20,7 @@ import pkRound from '../../public/img/pk-round.png';
 				alt="Peter Kerschbaumer"
 				loading="lazy"
 				decoding="async"
-				class="circle-flow w-1/2"
+				class="circle-flow w-1/2 -translate-x-2 p-2"
 			/>
 			<p class="mb-3">
 				¡Hola! Soy Peter, un alemán nativo de Koblenz (Coblenza), apasionado por ayudarte
@@ -35,7 +35,7 @@ import pkRound from '../../public/img/pk-round.png';
 
 			<p class="my-3">
 				Creo que la mejor manera de aprender un idioma es usándolo. Por eso el enfoce de
-				mis clases se centran es la conversación y habilidades prácticas, con la gramática
+				mis clases se centran en la conversación y habilidades prácticas, con la gramática
 				introducida de forma natural como parte del proceso. Cada sesión es individual y
 				se adapta a tus necesidades únicas, asegurando que te sientas apoyado y empoderado
 				en cada paso del camino.
@@ -79,7 +79,7 @@ import pkRound from '../../public/img/pk-round.png';
 				<figcaption
 					class="absolute bottom-2 mx-2 block bg-black bg-opacity-30 px-2 pb-1 text-xs text-white"
 				>
-					Coblenza es una cidudad fundado hace mas de 2000 mil años y tiene muchos
+					Coblenza es una cidudad fundada hace mas de 2000 mil años y tiene muchos
 					rincones bonitos.
 				</figcaption>
 			</figure>
@@ -91,7 +91,7 @@ import pkRound from '../../public/img/pk-round.png';
 				<figcaption
 					class="absolute bottom-2 mx-2 block bg-black bg-opacity-30 px-2 pb-1 text-xs text-white"
 				>
-					En en alrededor de Coblenza se encuantran muchos casteles medivales.
+					En en alrededor de Coblenza se encuantran muchos castillos medivales.
 				</figcaption>
 			</figure>
 		</div>
@@ -99,18 +99,10 @@ import pkRound from '../../public/img/pk-round.png';
 </Layout>
 
 <style>
-	blob_img {
-		max-width: 100%;
-		clip-path: circle(50%);
-		shape-outside: circle(100%);
-		shape-margin: 20px;
-		float: right;
-	}
-
 	.circle-flow {
 		float: left;
 		border-radius: 50%; /* Make it circular */
-		margin: 10px;
+		/* padding: 1rem; */
 		shape-outside: circle(); /* Define the circular shape for the text to wrap around */
 		clip-path: circle(); /* Ensures the visible area is also circular */
 	}

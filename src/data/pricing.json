@@ -6,14 +6,14 @@
     "byline": "",
     "description": "2 semanas, 1 hora al día, 5 dias a la semana (10 x 50 min)",
     "details": [
-      "Para un resultado más rapido",
+      "Para un resultado más rápido",
       "Un nivel entero en un mes (A1, A2, B1)",
       "Mantén el flujo",
       "Perfecto para la carrera",
       "Clases individuales (un alumno)"
     ],
     "button": {
-      "text": "Pruebame 1 hora gratis",
+      "text": "Prueba gratuida de 1 hora",
       "url": "#",
       "isHoverEffectEnabled": false
     },
@@ -26,14 +26,14 @@
     "id": "",
     "description": "10 clases con reserva flexible (10 x 50 min)",
     "details": [
-      "Para progression adaptado",
+      "Para progresión adaptado",
       "Ideal para 1-3 clases a la semana",
-      "Tu decides el ritmo",
-      "Hoario muy flexible",
+      "Tú decides el ritmo",
+      "Hoario flexible",
       "Cambio de reserva gratuito"
     ],
     "button": {
-      "text": "Pruebame 1 hora gratis",
+      "text": "Prueba gratuida de 1 hora",
       "url": "#",
       "isHoverEffectEnabled": true
     },
@@ -52,7 +52,7 @@
       "Para un repaso rápido"
     ],
     "button": {
-      "text": "Pruebame 1 hora gratis",
+      "text": "Prueba gratuida de 1 hora",
       "url": "#",
       "isHoverEffectEnabled": false
     },
