@@ -55,3 +55,10 @@ body {
 .reviews {
   touch-action: pan-y pinch-zoom;
 }
+
+/* blockquote:before {
+  content: open-quote;
+  font-weight: bold;
+  font-size: 100px;
+  color: #889c0b;
+} */

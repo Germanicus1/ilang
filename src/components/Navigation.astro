@@ -1,5 +1,9 @@
 ---
+import { Modal, ModalHeader, ModalBody, ModalFooter } from 'free-astro-components';
 import { Icon } from 'astro-icon/components';
+import pkRound from '../../public/img/pk-round.png';
+import { Image } from 'astro:assets';
+
 const basePath = import.meta.env.BASE_URL;
 
 const navLinks = [
@@ -57,14 +61,25 @@ const navLinks = [
 						</li>
 					))
 				}
+				<li>
+					<div class="hidden sm:flex">
+						<a href="#" data-modal-trigger="modal-contact">
+							<Icon
+								name="whatsapp"
+								size="clamp(30px, 4vw, 50px)"
+								class="text-muted shrink-0"
+							/>
+						</a>
+					</div>
+				</li>
 			</ul>
-			<!-- Backdrop -->
-			<div
-				id="menu-backdrop"
-				class="fixed inset-x-0 bottom-0 left-0 top-[48px] z-40 hidden bg-gray-900/50 sm:hidden"
-			>
-			</div>
 		</div>
+	</div>
+	<!-- Backdrop -->
+	<div
+		id="menu-backdrop"
+		class="fixed inset-x-0 bottom-0 left-0 top-[48px] z-40 hidden backdrop-blur-md sm:hidden"
+	>
 	</div>
 </nav>
 
@@ -125,3 +140,28 @@ const navLinks = [
 		});
 	});
 </script>
+
+<Modal id="modal-contact" class="custom-modal">
+	<ModalHeader class="bg-accent1">
+		<div class="grid size-auto grid-cols-[80px_1fr]">
+			<Image
+				src={pkRound}
+				alt="Peter Kerschbaumer"
+				loading="lazy"
+				decoding="async"
+				class="size-20"
+			/>
+			<h4 class="self-center pl-4 text-4xl font-semibold">¡Contáctame!</h4>
+		</div>
+	</ModalHeader>
+	<ModalBody class="bg-accent2">
+		<!-- <Icon name="whatsapp" size="2.5rem" class="text-muted shrink-0" /> -->
+		<p><span class="font-bold">WhatsApp:</span> +34 673721006</p>
+		<p>
+			<span class="font-bold">Correo:</span>
+			<a href="mailto:peter+il@kerschbaumer.es" class="text-blue-500 underline"
+				>peter+ilang@kerschbaumer.es</a
+			>
+		</p>
+	</ModalBody>
+</Modal>

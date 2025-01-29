@@ -16,12 +16,11 @@ import data from '../data/levels.json';
 					<p class="card-name relative mt-5 flex justify-center text-center font-black uppercase tracking-wider ~/lg:~text-2xl/4xl">
 						{card.name}
 					</p>
-					<p class="card-name flex justify-center text-pretty text-center font-semibold uppercase tracking-wide ~/lg:~text-xs/base">
+					<p class="card-synopsis flex justify-center text-pretty text-center font-semibold uppercase tracking-wide ~/lg:~text-xs/base">
 						{card.synopsis}
 					</p>
-
 					<p class="relative my-5 flex items-center justify-center">{card.description}</p>
-					<p class="mb-2 font-bold">Te permite a:</p>
+					<p class="mb-2 font-bold uppercase tracking-wide">Te permite a:</p>
 					<ul class="level-card-feature-container mx-3">
 						{card.goals.map((goal) => (
 							<li class="level-feature flex items-start gap-2">
@@ -34,6 +33,27 @@ import data from '../data/levels.json';
 							</li>
 						))}
 					</ul>
+					<div class="card-synopsis mt-5">
+						<p class="mb-2 font-bold uppercase tracking-wide">Tiempo:</p>
+						<ul>
+							<li class="mx-3 flex items-start gap-2">
+								<Icon
+									name="fe:check-circle-o"
+									size="1.5rem"
+									class="text-muted shrink-0"
+								/>
+								<span class="flex-1 text-left">Normal: {card.timenormal}</span>
+							</li>
+							<li class="mx-3 flex items-start gap-2">
+								<Icon
+									name="fe:check-circle-o"
+									size="1.5rem"
+									class="text-muted shrink-0"
+								/>
+								<span class="flex-1 text-left">Intensivo: {card.timeintensive}</span>
+							</li>
+						</ul>
+					</div>
 				</div>
 			))
 		}

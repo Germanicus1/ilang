@@ -5,7 +5,8 @@ const { text, link, style, isHoverEffectEnabled } = Astro.props;
 <div class="flex justify-center p-5">
 	<a
 		href={link}
-		class={`flex justify-center items-center rounded-lg w-full cursor-pointer py-2 sm:text-xl font-semibold text-center ${
+		onclick="Calendly.initPopupWidget({url: 'https://calendly.com/peter-kerschbaumer/clase-de-aleman'});return false;"
+		class={`flex justify-center items-center rounded-lg w-full cursor-pointer py-2 ~/lg:~text-base/xl font-semibold text-center ${
 			isHoverEffectEnabled
 				? 'hover:mix-blend-hard-light hover:shadow-[0px_0px_20px_5px_rgba(250,204,40,1)]'
 				: ''
@@ -14,3 +15,16 @@ const { text, link, style, isHoverEffectEnabled } = Astro.props;
 		{text}
 	</a>
 </div>
+
+<!-- Calendly link widget begin -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+<script
+	src="https://assets.calendly.com/assets/external/widget.js"
+	type="text/javascript"
+	async></script>
+<!-- <a
+	href=""
+	onclick="Calendly.initPopupWidget({url: 'https://calendly.com/peter-kerschbaumer/clase-de-aleman'});return false;"
+	>Schedule time with me</a
+> -->
+<!-- Calendly link widget end -->

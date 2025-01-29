@@ -16,24 +16,24 @@ import Button from './Button.astro';
 			Ya sea que tengas prisa y quieras aprender intensivamente o prefieras estudiar a tu
 			propio ritmo. Tengo una oferta para cada necesidad.
 		</p>
+		<p>Contáctame si tus necesidades no se cubren con mis ofertas.</p>
 	</div>
 
 	<div
 		class="pricing-container container-sm grid grid-cols-1 gap-2 sm:grid-cols-3 lg:mx-10"
+		id="pricing"
 	>
 		{
 			data.map((card, index) => (
 				<div
+					id={card.id}
 					class={`pricing-card relative w-full border bg-yellow-400 p-3 text-center ${
 						card?.featured
-							? "z-10 border-4 border-purple-600 font-semibold text-txt-header before:absolute before:left-1/2 before:top-[-1.3rem] before:-translate-x-1/2 before:whitespace-nowrap before:rounded-full before:bg-purple-600 before:px-4 before:py-2 before:text-center before:text-sm before:uppercase before:text-white before:content-['Más_Popular'] sm:col-start-2 sm:row-start-1 sm:scale-110"
-							: 'border-black'
+							? "z-10 order-1 border-4 border-purple-600 font-semibold text-txt-header before:absolute before:left-1/2 before:top-[-1.3rem] before:-translate-x-1/2 before:whitespace-nowrap before:rounded-full before:bg-purple-600 before:px-4 before:py-2 before:text-center before:text-sm before:uppercase before:text-white before:content-['Más_Popular'] sm:order-none sm:col-start-2 sm:row-start-1 sm:scale-110"
+							: 'order-2 border-black sm:order-none'
 					}`}
 				>
-					<h3
-						id="pricing"
-						class="pricing-card-pill my-2 font-bold tracking-tight ~text-xl/2xl"
-					>
+					<h3 class="pricing-card-pill my-2 font-bold tracking-tight ~text-xl/2xl">
 						{card.title}
 					</h3>
 					<p class="pricing-card-description mb-3 ~text-xs/base">{card.description}</p>
@@ -58,11 +58,29 @@ import Button from './Button.astro';
 					<Button
 						isHoverEffectEnabled={card.button.isHoverEffectEnabled}
 						text={card.button.text}
-						style={card.button.style}
+						style={`sm:text-sm ${
+							card?.featured
+								? 'bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white shadow-md hover:shadow-none shadow-yellow-800'
+								: 'border-1 border-black border shadow-yellow-700/65 shadow-md hover:shadow-none'
+						}`}
 						link={card.button.url}
+						onclick="Calendly.initPopupWidget({url: 'https://calendly.com/peter-kerschbaumer/clase-de-aleman'});return false;"
 					/>
 				</div>
 			))
 		}
 	</div>
 </section>
+
+<!-- Calendly link widget begin -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+<script
+	src="https://assets.calendly.com/assets/external/widget.js"
+	type="text/javascript"
+	async></script>
+<!-- <a
+	href=""
+	onclick="Calendly.initPopupWidget({url: 'https://calendly.com/peter-kerschbaumer/clase-de-aleman'});return false;"
+	>Schedule time with me</a
+> -->
+<!-- Calendly link widget end -->

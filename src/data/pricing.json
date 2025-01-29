@@ -1,9 +1,10 @@
 [
   {
     "price": "180€",
-    "title": "10X intenso",
+    "title": "10X intensivo",
+    "id": "intensive",
     "byline": "",
-    "description": "2 horas al día, 5 dias a la semana (10x50 min).",
+    "description": "2 semanas, 1 hora al día, 5 dias a la semana (10 x 50 min)",
     "details": [
       "Para un resultado más rapido",
       "Un nivel entero en un mes",
@@ -12,17 +13,18 @@
       "Clases individuales (un alumno)"
     ],
     "button": {
-      "text": "Reserva",
+      "text": "Pruebame 1 hora gratis",
       "url": "#",
-      "style": "bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white shadow-md hover:shadow-none shadow-yellow-800"
+      "isHoverEffectEnabled": false
     },
-    "featured": true
+    "featured": false
   },
   {
     "price": "200€",
     "byline": "",
     "title": "10 Libre",
-    "description": "10 clases con reserva flexible (10x50 min).",
+    "id": "",
+    "description": "10 clases con reserva flexible (10 x 50 min)",
     "details": [
       "Para progression adaptado",
       "Ideal para 1-3 clases a la semana",
@@ -31,29 +33,28 @@
       "Cambio de reserva gratuito"
     ],
     "button": {
-      "text": "Reserva",
+      "text": "Pruebame 1 hora gratis",
       "url": "#",
-      "style": "border-1 border-black border shadow-yellow-700/65 shadow-md hover:shadow-none",
       "isHoverEffectEnabled": true
     },
-    "featured": false
+    "featured": true
   },
   {
-    "price": "95€",
-    "title": "Acelerador 5",
-    "description": "1 hora al día, 5 dias a la semana (5x50 min)",
+    "price": "110€",
+    "title": "6X Acelerador",
+    "id": "accelerate",
+    "description": "2 semanas, 3 horas por semana, reserva libre (6 x 50 min)",
     "details": [
       "Resultados rapidos",
       "Preparación de examen",
       "Un nivel en dos meses",
-      "Semiflexible (1 hora al dia, tu eliges la hora)",
+      "Semiflexible (3 horas por semana, tu eliges la hora)",
       "Para un repaso rápido"
     ],
     "button": {
-      "text": "Reserva",
+      "text": "Pruebame 1 hora gratis",
       "url": "#",
-      "style": "border-1 border-black border shadow-yellow-700/65 shadow-md hover:shadow-none",
-      "isHoverEffectEnabled": true
+      "isHoverEffectEnabled": false
     },
     "featured": false
   }

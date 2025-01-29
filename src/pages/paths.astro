@@ -3,31 +3,104 @@ import { Image } from 'astro:assets';
 import levels from '../../public/img/levels.png';
 import Layout from '../layouts/Layout.astro';
 import Levels from '../components/levels.astro';
+const basePath = import.meta.env.BASE_URL;
 ---
 
 <Layout>
-	<div class="mt-[5%]">
-		<h1 class="mb-5 font-black tracking-tight text-txt-header ~/lg:~text-4xl/7xl">
+	<div class="mt-[5%] w-full ~/lg:~text-sm/xl">
+		<h1
+			class="font-black tracking-tight text-txt-header ~/lg:~text-4xl/7xl ~/lg:~mb-5/10"
+		>
 			Rutas de Aprendizaje
 		</h1>
-		<div class="flex ~mb-2/4">
-			<p class="~/lg:~text-base/2xl">
-				Para hacer comparables los conocimientos previos al aprender idiomas, los cursos
-				de idiomas en casi todo el mundo se clasifican generalmente en los niveles A1, A2,
-				B1, B2, C1 y C2, lo que también aplica a mi enseñanza. El nivel A1 está dirigido a
-				principiantes, mientras que el nivel C2 está destinado a participantes que hablan
-				casi como nativos. Este sistema de niveles corresponde al Marco Común Europeo de
-				Referencia para las Lenguas (MCER). Mi enseñaza de alemán están diseñados y
-				alineados de acuerdo con el MCER.
-			</p>
-			<Image
-				src={levels}
-				alt="Peter Kerschbaumer"
-				loading="lazy"
-				decoding="async"
-				class="hidden ~/lg:~max-w-[14rem]/[32rem] sm:flex"
-			/>
+		<div class="grid grid-cols-1 ~sm/lg:~gap-5/8 sm:grid-cols-2">
+			<div>
+				<p>
+					Para hacer comparables los conocimientos previos al aprender idiomas, los cursos
+					de idiomas en casi todo el mundo se clasifican generalmente en los niveles A1,
+					A2, B1, B2, C1 y C2, lo que también aplica a mi enseñanza. El nivel A1 está
+					dirigido a principiantes, mientras que el nivel C2 está destinado a
+					participantes que hablan casi como nativos. Este sistema de niveles corresponde
+					al Marco Común Europeo de Referencia para las Lenguas (MCER). Mi enseñaza de
+					alemán están diseñados y alineados de acuerdo con el MCER.
+				</p>
+			</div>
+			<div class="">
+				<Image
+					src={levels}
+					alt="Peter Kerschbaumer"
+					loading="lazy"
+					decoding="async"
+					class="size-full rounded-md"
+				/>
+			</div>
+			<!-- Reserve button. Shown on devices smaller than sm (640px) -->
+			<div class="flex whitespace-nowrap px-8 py-4 sm:hidden">
+				<a
+					href="#"
+					onclick="Calendly.initPopupWidget({url: 'https://calendly.com/peter-kerschbaumer/clase-de-aleman'});return false;"
+					class="w-full cursor-pointer rounded-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-2 text-center font-semibold text-white shadow-md shadow-yellow-800 hover:shadow-none sm:text-lg"
+					data-modal-trigger="contact-modal">Pruebame gratis 1 hora</a
+				>
+			</div>
+			<div>
+				<h3 class="mb-3 font-semibold text-txt-header ~/lg:~text-xl/2xl">
+					Mi estilo de enseñanza
+				</h3>
+				<p>
+					Adapto mi forma de enseñar al estilo de aprendizaje del estudiante. Algunos
+					aprendemos mejor con vídeos, otros con explicaciones escritas o ejercicios
+					orales. Quizás una combinación de los tres sea lo que mejor te funcione. Sea
+					cual sea tu estilo de aprendizaje, me adaptaré a él para que saques el máximo
+					provecho de tu esfuerzo.
+				</p>
+				<!-- Reserve button. Shown on devices bigger than sm (640px) -->
+				<div class="hidden whitespace-nowrap p-8 sm:flex">
+					<a
+						href="#"
+						onclick="Calendly.initPopupWidget({url: 'https://calendly.com/peter-kerschbaumer/clase-de-aleman'});return false;"
+						class="w-full cursor-pointer rounded-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-2 text-center font-semibold text-white shadow-md shadow-yellow-800 hover:shadow-none sm:text-lg"
+						data-modal-trigger="contact-modal">Pruebame gratis 1 hora</a
+					>
+				</div>
+			</div>
+			<div>
+				<h3 class="mb-3 font-semibold text-txt-header ~/lg:~text-xl/2xl">
+					Tiempo para avanzar
+				</h3>
+				<p>
+					El progreso varía según la dedicación del estudiante. Aquí tienes una estimación
+					basada en los tiempos de estudio promedio de estudiantes que han elegido
+					estudiar a su ritmo: Los niveles A tardaran entre 2-3 meses, los de B entre 3-4
+					meses y los de nivel C 6-12 meses. Todo depende de ti y el tiempo que puedes
+					invertir. Si eliges <a
+						href={`${basePath}` + '/#intensive'}
+						class="><span class= font-bold underline decoration-red-600 decoration-2 underline-offset-4"
+						>6X Acelerador o 10X Intensivo puedes cortar el tiempo entre 30-60%.</a
+					>
+				</p>
+			</div>.
 		</div>
 	</div>
+
+	<blockquote
+		class="bg-accent1 p-5 text-center font-serif text-4xl italic before:text-5xl before:font-bold before:content-['“'] after:text-5xl after:font-bold after:content-['”']"
+	>
+		¡Pase lo que pase, te haré hablar!
+	</blockquote>
+
 	<Levels />
 </Layout>
+
+<!-- Calendly link widget begin -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+<script
+	src="https://assets.calendly.com/assets/external/widget.js"
+	type="text/javascript"
+	async></script>
+<!-- <a
+	href=""
+	onclick="Calendly.initPopupWidget({url: 'https://calendly.com/peter-kerschbaumer/clase-de-aleman'});return false;"
+	>Schedule time with me</a
+> -->
+<!-- Calendly link widget end -->

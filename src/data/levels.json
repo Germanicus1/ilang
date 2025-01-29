@@ -3,6 +3,8 @@
     "level": "A1",
     "name": "Principiante",
     "synopsis": "Aquí dices tus primeras frases en alemán",
+    "timenormal": "2-3 meses",
+    "timeintensive": "4-6 semanas",
     "description": "Entiendes y utilizas expresiones cotidianas y frases sencillas para satisfacer necesidades concretas. Puedes presentarte a ti mismo y a otros, hacer preguntas personales, como dónde viven, a quién conocen o qué cosas tienen, y responder a este tipo de preguntas. Te comunicas de forma sencilla siempre que tus interlocutores hablen despacio, claro y estén dispuestos a ayudarte. ¡Empieza a desenvolverte en alemán desde el primer día!",
     "goals": [
       "comprender y utilizar expresiones conocidas y frases sencillas en situaciones cotidianas.",
@@ -15,6 +17,8 @@
     "level": "A2",
     "name": "Fundamentos",
     "synopsis": "Aquí profundizas tus primeros conocimientos de alemán.",
+    "timenormal": "2-3 meses",
+    "timeintensive": "4-6 semanas",
     "description": "Puedes entender frases y expresiones de uso frecuente relacionadas con áreas de importancia inmediata (por ejemplo, información personal y familiar, compras, trabajo, entorno cercano). Puedes comunicarte en situaci[ones simples y rutinarias donde se trata de un intercambio directo y sencillo de información sobre temas conocidos y habituales. También puedes describir con medios sencillos tu origen, formación, entorno cercano y cosas relacionadas con necesidades inmediatas.",
     "goals": [
       "comprender y reaccionar a expresiones y frases de uso frecuente.",
@@ -26,6 +30,8 @@
     "level": "B1",
     "name": "Avanzado",
     "synopsis": "Aquí completas las bases.",
+    "timenormal": "3-4 meses",
+    "timeintensive": "1-2 meses",
     "description": "Puedes entender los puntos principales cuando se utiliza un lenguaje estándar claro y cuando se trata de temas conocidos relacionados con el trabajo, la escuela, el tiempo libre, etc. Puedes manejar la mayoría de las situaciones que surgen al viajar en una región de habla alemana. Puedes expresarte de forma sencilla y coherente sobre temas conocidos y áreas de interés personal. También puedes contar experiencias y eventos, describir sueños, esperanzas y objetivos, y dar breves justificaciones o explicaciones sobre planes y opiniones.",
     "goals": [
       "entender los puntos principales en un alemán estándar claro.",
@@ -38,6 +44,8 @@
     "level": "B2",
     "name": "Independiente",
     "synopsis": "Aquí profundizas tus conocimientos, también para estudios y trabajo.",
+    "timenormal": "4-6 meses",
+    "timeintensive": "2-3 meses",
     "description": "Puedes entender los contenidos principales de textos complejos sobre temas concretos y abstractos, incluyendo discusiones técnicas en tu área de especialización. Puedes comunicarte de forma tan espontánea y fluida que mantener una conversación normal con hablantes nativos resulta fácil y sin esfuerzo para ambas partes. También puedes expresarte de manera clara y detallada sobre una amplia gama de temas, explicar tu punto de vista sobre una cuestión actual y señalar las ventajas y desventajas de distintas opciones.",
     "goals": [
       "entender los contenidos principales de temas complejos y textos abstractos, incluidas discusiones técnicas en tu campo.",
@@ -49,6 +57,8 @@
     "level": "C1",
     "name": "Competente",
     "synopsis": "Aquí aprendes alemán a un nivel de idioma competente.",
+    "timenormal": "6-12 meses",
+    "timeintensive": "3-6 meses",
     "description": "Puedes entender una amplia variedad de textos complejos y extensos, captando incluso significados implícitos. Puedes expresarte de manera espontánea y fluida, sin que sea evidente que buscas palabras con frecuencia. Usas el idioma de forma efectiva y flexible en contextos sociales, profesionales, educativos o académicos. También puedes expresarte de manera clara, estructurada y detallada sobre temas complejos, utilizando diversos recursos de cohesión textual de forma adecuada.",
     "goals": [
       "entender una amplia gama de textos complejos y extensos, incluso con significado implícito.",
@@ -62,6 +72,8 @@
     "level": "C2",
     "name": "Nativo",
     "synopsis": "Aquí alcanzas el nivel más alto del idioma.",
+    "timenormal": "6-12 meses",
+    "timeintensive": "3-6 meses",
     "description": "Puedes entender prácticamente todo lo que lees o escuchas sin esfuerzo. Puedes resumir información de diversas fuentes escritas y orales, presentando razones y explicaciones de forma coherente. Puedes expresarte de manera espontánea, muy fluida y precisa, dejando claras incluso las matices más sutiles en temas más complejos.",
     "goals": [
       "entender casi todo lo que lees o escuchas sin esfuerzo.",

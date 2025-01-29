@@ -24,24 +24,14 @@ import {
 			flexibles, este formato es para ti. Mejora rápido en áreas clave para tu carrera,
 			empleo o estudios. <span class="font-black">¡Alcanza tus metas ahora!</span>
 		</p>
-		<!-- Contact button. Shown on devices bigger than sm (640px) -->
-
+		<!-- Reserve button. Shown on devices bigger than sm (640px) -->
 		<div class="hidden w-full p-8 sm:flex">
 			<a
 				href="#"
+				onclick="Calendly.initPopupWidget({url: 'https://calendly.com/peter-kerschbaumer/clase-de-aleman'});return false;"
 				class="w-3/4 cursor-pointer rounded-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-2 text-center font-semibold text-white shadow-md shadow-yellow-800 hover:shadow-none sm:text-xl"
-				data-modal-trigger="contact-modal">Contáctame</a
+				data-modal-trigger="contact-modal">Pruebame gratis 1 hora</a
 			>
-			<Modal id="contact-modal">
-				<ModalHeader>
-					<h4>Modal Title</h4>
-				</ModalHeader>
-				<ModalBody />
-				<Contact />
-				<ModalFooter>
-					<Button label="Close" data-modal-close />
-				</ModalFooter>
-			</Modal>
 		</div>
 	</div>
 
@@ -59,13 +49,15 @@ import {
 <!-- Contact button for small screens -->
 <div class="flex place-items-center p-5 sm:hidden sm:items-center">
 	<a
-		href="#"
-		class=`rounded-lg w-full cursor-pointer rounded-sm p-2 text-center text-sm bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white shadow-md shadow-yellow-800 hover:shadow-[0px_0px_20px_5px_rgba(250,204,40,1)]`
-		>Contáctame</a
+		href=""
+		onclick="Calendly.initPopupWidget({url: 'https://calendly.com/peter-kerschbaumer/clase-de-aleman'});return false;"
+		class=`font-semibold rounded-lg w-full cursor-pointer rounded-sm p-2 text-center bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white shadow-md shadow-yellow-800 hover:shadow-[0px_0px_20px_5px_rgba(250,204,40,1)]`
+		>Pruebame gratis 1 hora</a
 	>
 </div>
-
-<Modal id="modal-id">
+<!--
+<Modal id="
+		modal-id">
 	<ModalHeader>
 		<h4>Modal Title</h4>
 	</ModalHeader>
@@ -75,4 +67,17 @@ import {
 	<ModalFooter>
 		<Button label="Close" data-modal-close />
 	</ModalFooter>
-</Modal>
+</Modal> -->
+
+<!-- Calendly link widget begin -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+<script
+	src="https://assets.calendly.com/assets/external/widget.js"
+	type="text/javascript"
+	async></script>
+<!-- <a
+	href=""
+	onclick="Calendly.initPopupWidget({url: 'https://calendly.com/peter-kerschbaumer/clase-de-aleman'});return false;"
+	>Schedule time with me</a
+> -->
+<!-- Calendly link widget end -->
