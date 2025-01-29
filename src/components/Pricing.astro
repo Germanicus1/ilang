@@ -2,6 +2,7 @@
 import { Icon } from 'astro-icon/components';
 import data from '../data/pricing.json';
 import Button from './Button.astro';
+const basePath = import.meta.env.BASE_URL;
 ---
 
 <section class="pricing-wrapper mb-10 grid place-items-center justify-center gap-2 py-10">
@@ -16,7 +17,28 @@ import Button from './Button.astro';
 			Ya sea que tengas prisa y quieras aprender intensivamente o prefieras estudiar a tu
 			propio ritmo. Tengo una oferta para cada necesidad.
 		</p>
-		<p>Contáctame si tus necesidades no se cubren con mis ofertas.</p>
+		<p class="text-pretty pt-4 ~/lg:~text-xs/xl">
+			Tienes necesidades especiales?
+
+			<!-- Mobile link -->
+			<a
+				href="https://wa.me/34673721006"
+				class="bg-accent1 text-sm font-semibold no-underline decoration-red-600 underline-offset-4 sm:hidden"
+			>
+				Contáctame
+			</a>
+
+			<!-- Desktop link -->
+			<a
+				href={`${basePath}` + '#pricing'}
+				data-modal-trigger="modal-contact"
+				class="hidden font-semibold underline decoration-red-600 underline-offset-4 hover:bg-accent1 sm:inline sm:hover:underline"
+			>
+				Contáctame
+			</a>
+
+			, y encontramos una solución.
+		</p>
 	</div>
 
 	<div
@@ -36,7 +58,9 @@ import Button from './Button.astro';
 					<h3 class="pricing-card-pill my-2 font-bold tracking-tight ~text-xl/2xl">
 						{card.title}
 					</h3>
-					<p class="pricing-card-description mb-3 ~text-xs/base">{card.description}</p>
+					<p class="pricing-card-description mb-3 text-pretty ~text-xs/base">
+						{card.description}
+					</p>
 
 					<p class="pricing-card-price text-txt mb-3 font-black ~text-3xl/5xl">
 						{card.price}
@@ -70,17 +94,18 @@ import Button from './Button.astro';
 			))
 		}
 	</div>
-</section>
+	<p class="text-pretty pt-8 ~/lg:~text-xs/base">Se puede pagar con Bizum o tarjeta.</p>
 
-<!-- Calendly link widget begin -->
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
-<script
-	src="https://assets.calendly.com/assets/external/widget.js"
-	type="text/javascript"
-	async></script>
-<!-- <a
+	<!-- Calendly link widget begin -->
+	<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+	<script
+		src="https://assets.calendly.com/assets/external/widget.js"
+		type="text/javascript"
+		async></script>
+	<!-- <a
 	href=""
 	onclick="Calendly.initPopupWidget({url: 'https://calendly.com/peter-kerschbaumer/clase-de-aleman'});return false;"
 	>Schedule time with me</a
 > -->
-<!-- Calendly link widget end -->
+	<!-- Calendly link widget end -->
+</section>

@@ -1,10 +1,9 @@
 ---
 import Navigation from '../components/Navigation.astro';
 import { Icon } from 'astro-icon/components';
-// Supports weights 100-900
-// import '@fontsource-variable/montserrat';
-// import '@fontsource/lato';
-// import '@fontsource/twinkle-star';
+import { Modal, ModalHeader, ModalBody, ModalFooter } from 'free-astro-components';
+import pkRound from '../../public/img/pk-round.png';
+import { Image } from 'astro:assets';
 import '../styles.css';
 ---
 
@@ -41,3 +40,28 @@ import '../styles.css';
 			.toString();
 	</script>
 </html>
+
+<Modal id="modal-contact" class="custom-modal">
+	<ModalHeader class="bg-accent1">
+		<div class="grid size-auto grid-cols-[80px_1fr]">
+			<Image
+				src={pkRound}
+				alt="Peter Kerschbaumer"
+				loading="lazy"
+				decoding="async"
+				class="size-20"
+			/>
+			<h4 class="self-center pl-4 text-4xl font-semibold">¡Contáctame!</h4>
+		</div>
+	</ModalHeader>
+	<ModalBody class="bg-accent2">
+		<!-- <Icon name="whatsapp" size="2.5rem" class="text-muted shrink-0" /> -->
+		<p><span class="font-bold">WhatsApp:</span> +34 673721006</p>
+		<p>
+			<span class="font-bold">Correo:</span>
+			<a href="mailto:peter+il@kerschbaumer.es" class="text-blue-500 underline"
+				>peter+ilang@kerschbaumer.es</a
+			>
+		</p>
+	</ModalBody>
+</Modal>
