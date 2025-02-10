@@ -7,7 +7,7 @@
   {
     "icon": "fe:calendar",
     "name": "Todas las edades",
-    "content": "Desde estudiantes de la E.S.O hasta adultos, mis clases están diseñadas para cualquier edad y etapa de aprendizaje."
+    "content": "Desde estudiantes de la E.S.O. hasta adultos, mis clases están diseñadas para cualquier edad y etapa de aprendizaje."
   },
   {
     "icon": "material-symbols:nest-remote-comfort-sensor-outline-rounded",
@@ -26,7 +26,7 @@
   },
   {
     "icon": "fe:clock",
-    "name": "Horario Felxible",
+    "name": "Horario Flexible",
     "content": "Agenda tus clases en los horarios que mejor se adapten a tu vida, con máxima flexibilidad."
   }
 ]
