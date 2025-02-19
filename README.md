@@ -1,6 +1,6 @@
 # iLang
 
-The landing page for my german-teaching business. It's an Astro-based web project featuring reusable components and a clean design.
+The landing page for my [german-teaching business](https://ilang.kerschbaumer.es). I'm based in Spain so the site is in Spanish. It's an Astro-based web project featuring reusable components and a clean design.
 
 ## Features
 
