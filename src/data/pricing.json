@@ -1,6 +1,6 @@
 [
   {
-    "price": "180€",
+    "price": "200€",
     "title": "10X intensivo",
     "id": "intensive",
     "byline": "",
@@ -20,14 +20,14 @@
     "featured": false
   },
   {
-    "price": "200€",
+    "price": "250€",
     "byline": "",
     "title": "10 Libre",
     "id": "",
     "description": "10 clases con reserva flexible (10 x 50 min)",
     "details": [
       "Para progresión adaptado",
-      "Ideal para 1-3 clases a la semana",
+      "Ideal para 1-2 clases a la semana",
       "Tú decides el ritmo",
       "Hoario flexible",
       "Cambio de reserva gratuito"
@@ -40,15 +40,15 @@
     "featured": true
   },
   {
-    "price": "110€",
-    "title": "6X Acelerador",
+    "price": "220€",
+    "title": "10X Acelerador",
     "id": "accelerate",
-    "description": "2 semanas, 3 horas por semana, reserva libre (6 x 50 min)",
+    "description": "5 semanas, 2 horas por semana, reserva libre (10 x 50 min)",
     "details": [
       "Resultados rapidos",
       "Preparación de examen",
       "Un nivel en dos meses",
-      "Semiflexible (3 horas por semana, tu eliges la hora)",
+      "Semiflexible (2 horas por semana, tu eliges la hora)",
       "Para un repaso rápido"
     ],
     "button": {
