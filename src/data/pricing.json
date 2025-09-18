@@ -7,7 +7,7 @@
     "description": "2 semanas, 1 hora al día, 5 dias a la semana (10 x 50 min)",
     "details": [
       "Para un resultado más rápido",
-      "Un nivel entero en un mes (A1, A2, B1)",
+      "Un nivel entero en menos de dos meses (A1, A2, B1)",
       "Mantén el flujo",
       "Perfecto para la carrera",
       "Clases individuales (un alumno)"
@@ -18,7 +18,7 @@
       "isHoverEffectEnabled": false
     },
     "payButton": {
-      "text": "¡Quiero comprar mi paq!",
+      "text": "¡Quiero comprar mi pack!",
       "url": "https://buy.stripe.com/6oU6oJ1k85wedCn9bg5Vu05",
       "isHoverEffectEnabled": false
     },
@@ -43,7 +43,7 @@
       "isHoverEffectEnabled": true
     },
     "payButton": {
-      "text": "¡Quiero comprar mi paq!",
+      "text": "¡Quiero comprar mi pack!",
       "url": "https://buy.stripe.com/3cs7vxcb19ky3Ty9AD",
       "isHoverEffectEnabled": false
     },
@@ -57,7 +57,7 @@
     "details": [
       "Resultados rapidos",
       "Preparación de examen",
-      "Un nivel en dos meses",
+      "Un nivel en tres meses",
       "Semiflexible (2 horas por semana, tu eliges la hora)",
       "Para un repaso rápido"
     ],
@@ -67,7 +67,7 @@
       "isHoverEffectEnabled": false
     },
     "payButton": {
-      "text": "¡Quiero comprar mi paq!",
+      "text": "¡Quiero comprar mi pack!",
       "url": "https://buy.stripe.com/9B614pd2Q1fY41N87c5Vu06",
       "isHoverEffectEnabled": false
     },
