@@ -2,6 +2,7 @@
 import { Icon } from 'astro-icon/components';
 import data from '../data/pricing.json';
 import Button from './Button.astro';
+import ButtonPay from './ButtonPay.astro';
 const basePath = import.meta.env.BASE_URL;
 ---
 
@@ -89,6 +90,16 @@ const basePath = import.meta.env.BASE_URL;
 						}`}
 						link={card.button.url}
 						onclick="Calendly.initPopupWidget({url: 'https://calendly.com/peter-kerschbaumer/clase-de-aleman'});return false;"
+					/>
+					<ButtonPay
+						isHoverEffectEnabled={card.payButton.isHoverEffectEnabled}
+						text={card.payButton.text}
+						style={`sm:text-sm ${
+							card?.featured
+								? 'bg-pink-500 text-white shadow-md hover:shadow-none shadow-yellow-800'
+								: 'border-1 border-black border shadow-yellow-700/65 shadow-md hover:shadow-none'
+						}`}
+						link={card.payButton.url}
 					/>
 				</div>
 			))

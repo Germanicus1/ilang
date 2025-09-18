@@ -1,7 +1,7 @@
 [
   {
     "price": "200€",
-    "title": "10X intensivo",
+    "title": "10X Intensivo",
     "id": "intensive",
     "byline": "",
     "description": "2 semanas, 1 hora al día, 5 dias a la semana (10 x 50 min)",
@@ -13,8 +13,13 @@
       "Clases individuales (un alumno)"
     ],
     "button": {
-      "text": "Prueba gratuida de 1 hora",
-      "url": "#",
+      "text": "Quiero reservar 1 hora de prueba",
+      "url": "https://calendly.com/peter-kerschbaumer/clase-de-aleman",
+      "isHoverEffectEnabled": false
+    },
+    "payButton": {
+      "text": "¡Quiero comprar mi paq!",
+      "url": "https://buy.stripe.com/6oU6oJ1k85wedCn9bg5Vu05",
       "isHoverEffectEnabled": false
     },
     "featured": false
@@ -23,7 +28,7 @@
     "price": "250€",
     "byline": "",
     "title": "10 Libre",
-    "id": "",
+    "id": "free",
     "description": "10 clases con reserva flexible (10 x 50 min)",
     "details": [
       "Para progresión adaptado",
@@ -33,9 +38,14 @@
       "Cambio de reserva gratuito"
     ],
     "button": {
-      "text": "Prueba gratuida de 1 hora",
-      "url": "#",
+      "text": "Quiero reservar 1 hora de prueba",
+      "url": "https://calendly.com/peter-kerschbaumer/clase-de-aleman",
       "isHoverEffectEnabled": true
+    },
+    "payButton": {
+      "text": "¡Quiero comprar mi paq!",
+      "url": "https://buy.stripe.com/3cs7vxcb19ky3Ty9AD",
+      "isHoverEffectEnabled": false
     },
     "featured": false
   },
@@ -52,8 +62,13 @@
       "Para un repaso rápido"
     ],
     "button": {
-      "text": "Prueba gratuida de 1 hora",
-      "url": "#",
+      "text": "Quiero reservar 1 hora de prueba",
+      "url": "https://calendly.com/peter-kerschbaumer/clase-de-aleman",
+      "isHoverEffectEnabled": false
+    },
+    "payButton": {
+      "text": "¡Quiero comprar mi paq!",
+      "url": "https://buy.stripe.com/9B614pd2Q1fY41N87c5Vu06",
       "isHoverEffectEnabled": false
     },
     "featured": true
